@@ -1,0 +1,1374 @@
+Original displayseg = b800
+wn_init()
+v_savescreen(80,43)
+v_gettext(), (0,0)-(80,43) 
+  pulldown() MENU_HEAD=227bc
+  pulldown_bar() MENU_HEAD=227bc
+  calc_pulldownbar()
+    SHOW_BAR *****()
+    wn_open() aff78: ( 0, 0) w=80 h= 1
+    wn_open(1) NO_BORDER
+    wn_open(2) xsize = 80   ysize = 1
+    wn_open(3) row = 0   col = 0
+    wn_open(4) xsize = 80   ysize = 1
+    wn_open(5) (0,0) x2 = 79  y2=0
+    Variables are initialized
+    add_wn_list(aff78,(null))
+    wn_clear(aff78,(null)) (0,0) x2=79  y2=0
+    l=80   h=1   color=112   
+    v_fillarea() (0,0) w=80 h=1
+    hotstring() (0,1), hotkey='0' <System>
+    v_prints() (0,1) <System>
+    v_settattrib_area() (0,1) w=6 h=1
+    hotstring() (0,9), hotkey='0' <Edit>
+    v_prints() (0,9) <Edit>
+    v_settattrib_area() (0,9) w=4 h=1
+    hotstring() (0,15), hotkey='0' <Help>
+    v_prints() (0,15) <Help>
+    v_settattrib_area() (0,15) w=4 h=1
+    hotstring() (0,21), hotkey='0' <Window_demo>
+    v_prints() (0,21) <Window_demo>
+    v_settattrib_area() (0,21) w=11 h=1
+    wn_save(aff78,(null)) (0,0)-(79,0) 
+    v_gettext(), (0,0)-(79,0) 
+    END SHOW_BAR *****
+  pulldown() - Waiting for first key press
+  waitkey()
+  key_pressed() TRUE
+  TRUE 
+  scancode = 1f73
+  key pressed = 1f73
+  character = <s>
+  we have a hotkey match
+  mptr = 220fc
+  START POPUP()
+    wn_open() b0090: ( 1, 1) w=12 h= 6
+    wn_open() WITH BORDER    wn_open() xsize = 12   ysize = 6
+    wn_open() row = 1   col = 1
+    wn_open() xsize = 12   ysize = 6
+    wn_open(5) (2,2) x2 = 11  y2=5
+    Variables are initialized
+    wn_save(aff78,(null)) (0,0)-(79,0) 
+    v_gettext(), (0,0)-(79,0) 
+    add_wn_list(b0090,(null))
+    wn_border(b0090,(null), style =  1)
+    v_drawbox() (1,1) w=12 h=6
+    wn_clear(b0090,(null)) (2,2) x2=11  y2=5
+    l=10   h=4   color=112   
+    v_fillarea() (2,2) w=10 h=4
+    printing popup menu items:
+    hotstring() (2,2), hotkey='0' <Directory >
+    v_prints() (2,2) <Directory >
+    v_settattrib_area() (2,2) w=10 h=1
+    hotstring() (3,2), hotkey='0' <Change dir>
+    v_prints() (3,2) <Change dir>
+    v_settattrib_area() (3,2) w=10 h=1
+    hotstring() (4,2), hotkey='0' <OS shell  >
+    v_prints() (4,2) <OS shell  >
+    v_settattrib_area() (4,2) w=10 h=1
+    hotstring() (5,2), hotkey='0' <Exit      >
+    v_prints() (5,2) <Exit      >
+    v_settattrib_area() (5,2) w=10 h=1
+    v_settattrib_area() (2,2) w=10 h=1
+    hotstring() (2,2), hotkey='0' <Directory >
+    v_prints() (2,2) <Directory >
+    v_settattrib_area() (2,2) w=10 h=1
+    v_settattrib_area() (2,2) w=10 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 2064
+    OTHER KEY
+    wn_open() b0100: ( 3, 3) w=24 h= 3
+    wn_open() WITH BORDER    wn_open() xsize = 24   ysize = 3
+    wn_open() row = 3   col = 3
+    wn_open() xsize = 24   ysize = 3
+    wn_open(5) (4,4) x2 = 25  y2=4
+    Variables are initialized
+    wn_save(b0090,(null)) (1,1)-(12,6) 
+    v_gettext(), (1,1)-(12,6) 
+    add_wn_list(b0100,(null))
+    wn_border(b0100,(null), style =  1)
+    v_drawbox() (3,3) w=24 h=3
+    wn_clear(b0100,(null)) (4,4) x2=25  y2=4
+    l=22   h=1   color=7   
+    v_fillarea() (4,4) w=22 h=1
+    wn_title(b0100,Enter file mask)
+    wn_border(b0100,Enter file mask, style =  1)
+    v_drawbox() (3,3) w=24 h=3
+    v_prints() (3,9) <Enter file mask>
+    v_prints() (4,5) <*.* >
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 1c0d
+    v_prints() (4,5) <*.* >
+    wn_close(b0100,Enter file mask)
+    del_wn_list(b0100,Enter file mask)
+      --- aff78 ((null)) level: 1
+      --- b0090 ((null)) level: 2
+    wn_top(b0090,(null))
+    wn_restore(b0090,(null)) (1,1)-(12,6)
+    v_puttext(), (1,1)-(12,6) 
+    wn_update() START **** 
+      wn_save(b0090,(null)) (1,1)-(12,6) 
+      v_gettext(), (1,1)-(12,6) 
+      wn_restore(aff78,(null)) (0,0)-(79,0)
+      v_puttext(), (0,0)-(79,0) 
+      wn_restore(b0090,(null)) (1,1)-(12,6)
+      v_puttext(), (1,1)-(12,6) 
+    wn_update() END ****
+    wn_open() bc720: ( 4, 4) w=58 h=11
+    wn_open() WITH BORDER    wn_open() xsize = 58   ysize = 11
+    wn_open() row = 4   col = 4
+    wn_open() xsize = 58   ysize = 11
+    wn_open(5) (5,5) x2 = 60  y2=13
+    Variables are initialized
+    wn_save(b0090,(null)) (1,1)-(12,6) 
+    v_gettext(), (1,1)-(12,6) 
+    add_wn_list(bc720,(null))
+    wn_border(bc720,(null), style =  1)
+    v_drawbox() (4,4) w=58 h=11
+    wn_clear(bc720,(null)) (5,5) x2=60  y2=13
+    l=56   h=9   color=112   
+    v_fillarea() (5,5) w=56 h=9
+    wn_title(bc720,*.*)
+    wn_border(bc720,*.*, style =  1)
+    v_drawbox() (4,4) w=58 h=11
+    v_prints() (4,33) <*.*>
+    hotstring() (5,6), hotkey='-1' <keys.h      >
+    v_prints() (5,6) <keys.h      >
+    v_settattrib_area() (5,6) w=12 h=1
+    hotstring() (5,20), hotkey='-1' <makefile    >
+    v_prints() (5,20) <makefile    >
+    v_settattrib_area() (5,20) w=12 h=1
+    hotstring() (5,34), hotkey='-1' <window.ndx  >
+    v_prints() (5,34) <window.ndx  >
+    v_settattrib_area() (5,34) w=12 h=1
+    hotstring() (5,48), hotkey='-1' <4dos.c      >
+    v_prints() (5,48) <4dos.c      >
+    v_settattrib_area() (5,48) w=12 h=1
+    hotstring() (6,6), hotkey='-1' <dir.c       >
+    v_prints() (6,6) <dir.c       >
+    v_settattrib_area() (6,6) w=12 h=1
+    hotstring() (6,20), hotkey='-1' <windio.c    >
+    v_prints() (6,20) <windio.c    >
+    v_settattrib_area() (6,20) w=12 h=1
+    hotstring() (6,34), hotkey='-1' <window.o    >
+    v_prints() (6,34) <window.o    >
+    v_settattrib_area() (6,34) w=12 h=1
+    hotstring() (6,48), hotkey='-1' <makefile.cfg>
+    v_prints() (6,48) <makefile.cfg>
+    v_settattrib_area() (6,48) w=12 h=1
+    hotstring() (7,6), hotkey='-1' <config~1.in >
+    v_prints() (7,6) <config~1.in >
+    v_settattrib_area() (7,6) w=12 h=1
+    hotstring() (7,20), hotkey='-1' <make-cfg.in >
+    v_prints() (7,20) <make-cfg.in >
+    v_settattrib_area() (7,20) w=12 h=1
+    hotstring() (7,34), hotkey='-1' <config~1    >
+    v_prints() (7,34) <config~1    >
+    v_settattrib_area() (7,34) w=12 h=1
+    hotstring() (7,48), hotkey='-1' <config.log  >
+    v_prints() (7,48) <config.log  >
+    v_settattrib_area() (7,48) w=12 h=1
+    hotstring() (8,6), hotkey='-1' <config~1.in~>
+    v_prints() (8,6) <config~1.in~>
+    v_settattrib_area() (8,6) w=12 h=1
+    hotstring() (8,20), hotkey='-1' <fortify.c   >
+    v_prints() (8,20) <fortify.c   >
+    v_settattrib_area() (8,20) w=12 h=1
+    hotstring() (8,34), hotkey='-1' <config~1.cac>
+    v_prints() (8,34) <config~1.cac>
+    v_settattrib_area() (8,34) w=12 h=1
+    hotstring() (8,48), hotkey='-1' <instal~1    >
+    v_prints() (8,48) <instal~1    >
+    v_settattrib_area() (8,48) w=12 h=1
+    hotstring() (9,6), hotkey='-1' <config~1.sta>
+    v_prints() (9,6) <config~1.sta>
+    v_settattrib_area() (9,6) w=12 h=1
+    hotstring() (9,20), hotkey='-1' <fortify.h   >
+    v_prints() (9,20) <fortify.h   >
+    v_settattrib_area() (9,20) w=12 h=1
+    hotstring() (9,34), hotkey='-1' <ufortify.h  >
+    v_prints() (9,34) <ufortify.h  >
+    v_settattrib_area() (9,34) w=12 h=1
+    hotstring() (9,48), hotkey='-1' <chksum.h    >
+    v_prints() (9,48) <chksum.h    >
+    v_settattrib_area() (9,48) w=12 h=1
+    hotstring() (10,6), hotkey='-1' <windio.o    >
+    v_prints() (10,6) <windio.o    >
+    v_settattrib_area() (10,6) w=12 h=1
+    hotstring() (10,20), hotkey='-1' <fortify.o   >
+    v_prints() (10,20) <fortify.o   >
+    v_settattrib_area() (10,20) w=12 h=1
+    hotstring() (10,34), hotkey='-1' <window.c    >
+    v_prints() (10,34) <window.c    >
+    v_settattrib_area() (10,34) w=12 h=1
+    hotstring() (10,48), hotkey='-1' <v_cursor.h  >
+    v_prints() (10,48) <v_cursor.h  >
+    v_settattrib_area() (10,48) w=12 h=1
+    hotstring() (11,6), hotkey='-1' <window.h    >
+    v_prints() (11,6) <window.h    >
+    v_settattrib_area() (11,6) w=12 h=1
+    hotstring() (11,20), hotkey='-1' <wn_desk.o   >
+    v_prints() (11,20) <wn_desk.o   >
+    v_settattrib_area() (11,20) w=12 h=1
+    hotstring() (11,34), hotkey='-1' <dialog.o    >
+    v_prints() (11,34) <dialog.o    >
+    v_settattrib_area() (11,34) w=12 h=1
+    hotstring() (11,48), hotkey='-1' <wn_desk.c   >
+    v_prints() (11,48) <wn_desk.c   >
+    v_settattrib_area() (11,48) w=12 h=1
+    hotstring() (12,6), hotkey='-1' <window.hlp  >
+    v_prints() (12,6) <window.hlp  >
+    v_settattrib_area() (12,6) w=12 h=1
+    hotstring() (12,20), hotkey='-1' <dir.o       >
+    v_prints() (12,20) <dir.o       >
+    v_settattrib_area() (12,20) w=12 h=1
+    hotstring() (12,34), hotkey='-1' <keys.c      >
+    v_prints() (12,34) <keys.c      >
+    v_settattrib_area() (12,34) w=12 h=1
+    hotstring() (12,48), hotkey='-1' <popup.c     >
+    v_prints() (12,48) <popup.c     >
+    v_settattrib_area() (12,48) w=12 h=1
+    hotstring() (13,6), hotkey='-1' <editstr.o   >
+    v_prints() (13,6) <editstr.o   >
+    v_settattrib_area() (13,6) w=12 h=1
+    hotstring() (13,20), hotkey='-1' <editstr.c   >
+    v_prints() (13,20) <editstr.c   >
+    v_settattrib_area() (13,20) w=12 h=1
+    hotstring() (13,34), hotkey='-1' <wn_clear.c  >
+    v_prints() (13,34) <wn_clear.c  >
+    v_settattrib_area() (13,34) w=12 h=1
+    hotstring() (13,48), hotkey='-1' <genindex.exe>
+    v_prints() (13,48) <genindex.exe>
+    v_settattrib_area() (13,48) w=12 h=1
+    hotstring() (5,6), hotkey='-1' <keys.h      >
+    v_prints() (5,6) <keys.h      >
+    v_settattrib_area() (5,6) w=12 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 50e0
+    hotstring() (5,6), hotkey='-1' <dir.c       >
+    v_prints() (5,6) <dir.c       >
+    v_settattrib_area() (5,6) w=12 h=1
+    hotstring() (5,20), hotkey='-1' <windio.c    >
+    v_prints() (5,20) <windio.c    >
+    v_settattrib_area() (5,20) w=12 h=1
+    hotstring() (5,34), hotkey='-1' <window.o    >
+    v_prints() (5,34) <window.o    >
+    v_settattrib_area() (5,34) w=12 h=1
+    hotstring() (5,48), hotkey='-1' <makefile.cfg>
+    v_prints() (5,48) <makefile.cfg>
+    v_settattrib_area() (5,48) w=12 h=1
+    hotstring() (6,6), hotkey='-1' <config~1.in >
+    v_prints() (6,6) <config~1.in >
+    v_settattrib_area() (6,6) w=12 h=1
+    hotstring() (6,20), hotkey='-1' <make-cfg.in >
+    v_prints() (6,20) <make-cfg.in >
+    v_settattrib_area() (6,20) w=12 h=1
+    hotstring() (6,34), hotkey='-1' <config~1    >
+    v_prints() (6,34) <config~1    >
+    v_settattrib_area() (6,34) w=12 h=1
+    hotstring() (6,48), hotkey='-1' <config.log  >
+    v_prints() (6,48) <config.log  >
+    v_settattrib_area() (6,48) w=12 h=1
+    hotstring() (7,6), hotkey='-1' <config~1.in~>
+    v_prints() (7,6) <config~1.in~>
+    v_settattrib_area() (7,6) w=12 h=1
+    hotstring() (7,20), hotkey='-1' <fortify.c   >
+    v_prints() (7,20) <fortify.c   >
+    v_settattrib_area() (7,20) w=12 h=1
+    hotstring() (7,34), hotkey='-1' <config~1.cac>
+    v_prints() (7,34) <config~1.cac>
+    v_settattrib_area() (7,34) w=12 h=1
+    hotstring() (7,48), hotkey='-1' <instal~1    >
+    v_prints() (7,48) <instal~1    >
+    v_settattrib_area() (7,48) w=12 h=1
+    hotstring() (8,6), hotkey='-1' <config~1.sta>
+    v_prints() (8,6) <config~1.sta>
+    v_settattrib_area() (8,6) w=12 h=1
+    hotstring() (8,20), hotkey='-1' <fortify.h   >
+    v_prints() (8,20) <fortify.h   >
+    v_settattrib_area() (8,20) w=12 h=1
+    hotstring() (8,34), hotkey='-1' <ufortify.h  >
+    v_prints() (8,34) <ufortify.h  >
+    v_settattrib_area() (8,34) w=12 h=1
+    hotstring() (8,48), hotkey='-1' <chksum.h    >
+    v_prints() (8,48) <chksum.h    >
+    v_settattrib_area() (8,48) w=12 h=1
+    hotstring() (9,6), hotkey='-1' <windio.o    >
+    v_prints() (9,6) <windio.o    >
+    v_settattrib_area() (9,6) w=12 h=1
+    hotstring() (9,20), hotkey='-1' <fortify.o   >
+    v_prints() (9,20) <fortify.o   >
+    v_settattrib_area() (9,20) w=12 h=1
+    hotstring() (9,34), hotkey='-1' <window.c    >
+    v_prints() (9,34) <window.c    >
+    v_settattrib_area() (9,34) w=12 h=1
+    hotstring() (9,48), hotkey='-1' <v_cursor.h  >
+    v_prints() (9,48) <v_cursor.h  >
+    v_settattrib_area() (9,48) w=12 h=1
+    hotstring() (10,6), hotkey='-1' <window.h    >
+    v_prints() (10,6) <window.h    >
+    v_settattrib_area() (10,6) w=12 h=1
+    hotstring() (10,20), hotkey='-1' <wn_desk.o   >
+    v_prints() (10,20) <wn_desk.o   >
+    v_settattrib_area() (10,20) w=12 h=1
+    hotstring() (10,34), hotkey='-1' <dialog.o    >
+    v_prints() (10,34) <dialog.o    >
+    v_settattrib_area() (10,34) w=12 h=1
+    hotstring() (10,48), hotkey='-1' <wn_desk.c   >
+    v_prints() (10,48) <wn_desk.c   >
+    v_settattrib_area() (10,48) w=12 h=1
+    hotstring() (11,6), hotkey='-1' <window.hlp  >
+    v_prints() (11,6) <window.hlp  >
+    v_settattrib_area() (11,6) w=12 h=1
+    hotstring() (11,20), hotkey='-1' <dir.o       >
+    v_prints() (11,20) <dir.o       >
+    v_settattrib_area() (11,20) w=12 h=1
+    hotstring() (11,34), hotkey='-1' <keys.c      >
+    v_prints() (11,34) <keys.c      >
+    v_settattrib_area() (11,34) w=12 h=1
+    hotstring() (11,48), hotkey='-1' <popup.c     >
+    v_prints() (11,48) <popup.c     >
+    v_settattrib_area() (11,48) w=12 h=1
+    hotstring() (12,6), hotkey='-1' <editstr.o   >
+    v_prints() (12,6) <editstr.o   >
+    v_settattrib_area() (12,6) w=12 h=1
+    hotstring() (12,20), hotkey='-1' <editstr.c   >
+    v_prints() (12,20) <editstr.c   >
+    v_settattrib_area() (12,20) w=12 h=1
+    hotstring() (12,34), hotkey='-1' <wn_clear.c  >
+    v_prints() (12,34) <wn_clear.c  >
+    v_settattrib_area() (12,34) w=12 h=1
+    hotstring() (12,48), hotkey='-1' <genindex.exe>
+    v_prints() (12,48) <genindex.exe>
+    v_settattrib_area() (12,48) w=12 h=1
+    hotstring() (13,6), hotkey='-1' <wn_bord.o   >
+    v_prints() (13,6) <wn_bord.o   >
+    v_settattrib_area() (13,6) w=12 h=1
+    hotstring() (13,20), hotkey='-1' <keys.o      >
+    v_prints() (13,20) <keys.o      >
+    v_settattrib_area() (13,20) w=12 h=1
+    hotstring() (13,34), hotkey='-1' <popup.o     >
+    v_prints() (13,34) <popup.o     >
+    v_settattrib_area() (13,34) w=12 h=1
+    hotstring() (13,48), hotkey='-1' <wn_clear.o  >
+    v_prints() (13,48) <wn_clear.o  >
+    v_settattrib_area() (13,48) w=12 h=1
+    hotstring() (5,6), hotkey='-1' <dir.c       >
+    v_prints() (5,6) <dir.c       >
+    v_settattrib_area() (5,6) w=12 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 50e0
+    hotstring() (5,6), hotkey='-1' <config~1.in >
+    v_prints() (5,6) <config~1.in >
+    v_settattrib_area() (5,6) w=12 h=1
+    hotstring() (5,20), hotkey='-1' <make-cfg.in >
+    v_prints() (5,20) <make-cfg.in >
+    v_settattrib_area() (5,20) w=12 h=1
+    hotstring() (5,34), hotkey='-1' <config~1    >
+    v_prints() (5,34) <config~1    >
+    v_settattrib_area() (5,34) w=12 h=1
+    hotstring() (5,48), hotkey='-1' <config.log  >
+    v_prints() (5,48) <config.log  >
+    v_settattrib_area() (5,48) w=12 h=1
+    hotstring() (6,6), hotkey='-1' <config~1.in~>
+    v_prints() (6,6) <config~1.in~>
+    v_settattrib_area() (6,6) w=12 h=1
+    hotstring() (6,20), hotkey='-1' <fortify.c   >
+    v_prints() (6,20) <fortify.c   >
+    v_settattrib_area() (6,20) w=12 h=1
+    hotstring() (6,34), hotkey='-1' <config~1.cac>
+    v_prints() (6,34) <config~1.cac>
+    v_settattrib_area() (6,34) w=12 h=1
+    hotstring() (6,48), hotkey='-1' <instal~1    >
+    v_prints() (6,48) <instal~1    >
+    v_settattrib_area() (6,48) w=12 h=1
+    hotstring() (7,6), hotkey='-1' <config~1.sta>
+    v_prints() (7,6) <config~1.sta>
+    v_settattrib_area() (7,6) w=12 h=1
+    hotstring() (7,20), hotkey='-1' <fortify.h   >
+    v_prints() (7,20) <fortify.h   >
+    v_settattrib_area() (7,20) w=12 h=1
+    hotstring() (7,34), hotkey='-1' <ufortify.h  >
+    v_prints() (7,34) <ufortify.h  >
+    v_settattrib_area() (7,34) w=12 h=1
+    hotstring() (7,48), hotkey='-1' <chksum.h    >
+    v_prints() (7,48) <chksum.h    >
+    v_settattrib_area() (7,48) w=12 h=1
+    hotstring() (8,6), hotkey='-1' <windio.o    >
+    v_prints() (8,6) <windio.o    >
+    v_settattrib_area() (8,6) w=12 h=1
+    hotstring() (8,20), hotkey='-1' <fortify.o   >
+    v_prints() (8,20) <fortify.o   >
+    v_settattrib_area() (8,20) w=12 h=1
+    hotstring() (8,34), hotkey='-1' <window.c    >
+    v_prints() (8,34) <window.c    >
+    v_settattrib_area() (8,34) w=12 h=1
+    hotstring() (8,48), hotkey='-1' <v_cursor.h  >
+    v_prints() (8,48) <v_cursor.h  >
+    v_settattrib_area() (8,48) w=12 h=1
+    hotstring() (9,6), hotkey='-1' <window.h    >
+    v_prints() (9,6) <window.h    >
+    v_settattrib_area() (9,6) w=12 h=1
+    hotstring() (9,20), hotkey='-1' <wn_desk.o   >
+    v_prints() (9,20) <wn_desk.o   >
+    v_settattrib_area() (9,20) w=12 h=1
+    hotstring() (9,34), hotkey='-1' <dialog.o    >
+    v_prints() (9,34) <dialog.o    >
+    v_settattrib_area() (9,34) w=12 h=1
+    hotstring() (9,48), hotkey='-1' <wn_desk.c   >
+    v_prints() (9,48) <wn_desk.c   >
+    v_settattrib_area() (9,48) w=12 h=1
+    hotstring() (10,6), hotkey='-1' <window.hlp  >
+    v_prints() (10,6) <window.hlp  >
+    v_settattrib_area() (10,6) w=12 h=1
+    hotstring() (10,20), hotkey='-1' <dir.o       >
+    v_prints() (10,20) <dir.o       >
+    v_settattrib_area() (10,20) w=12 h=1
+    hotstring() (10,34), hotkey='-1' <keys.c      >
+    v_prints() (10,34) <keys.c      >
+    v_settattrib_area() (10,34) w=12 h=1
+    hotstring() (10,48), hotkey='-1' <popup.c     >
+    v_prints() (10,48) <popup.c     >
+    v_settattrib_area() (10,48) w=12 h=1
+    hotstring() (11,6), hotkey='-1' <editstr.o   >
+    v_prints() (11,6) <editstr.o   >
+    v_settattrib_area() (11,6) w=12 h=1
+    hotstring() (11,20), hotkey='-1' <editstr.c   >
+    v_prints() (11,20) <editstr.c   >
+    v_settattrib_area() (11,20) w=12 h=1
+    hotstring() (11,34), hotkey='-1' <wn_clear.c  >
+    v_prints() (11,34) <wn_clear.c  >
+    v_settattrib_area() (11,34) w=12 h=1
+    hotstring() (11,48), hotkey='-1' <genindex.exe>
+    v_prints() (11,48) <genindex.exe>
+    v_settattrib_area() (11,48) w=12 h=1
+    hotstring() (12,6), hotkey='-1' <wn_bord.o   >
+    v_prints() (12,6) <wn_bord.o   >
+    v_settattrib_area() (12,6) w=12 h=1
+    hotstring() (12,20), hotkey='-1' <keys.o      >
+    v_prints() (12,20) <keys.o      >
+    v_settattrib_area() (12,20) w=12 h=1
+    hotstring() (12,34), hotkey='-1' <popup.o     >
+    v_prints() (12,34) <popup.o     >
+    v_settattrib_area() (12,34) w=12 h=1
+    hotstring() (12,48), hotkey='-1' <wn_clear.o  >
+    v_prints() (12,48) <wn_clear.o  >
+    v_settattrib_area() (12,48) w=12 h=1
+    hotstring() (13,6), hotkey='-1' <wn_error.c  >
+    v_prints() (13,6) <wn_error.c  >
+    v_settattrib_area() (13,6) w=12 h=1
+    hotstring() (13,20), hotkey='-1' <wn_debug.o  >
+    v_prints() (13,20) <wn_debug.o  >
+    v_settattrib_area() (13,20) w=12 h=1
+    hotstring() (13,34), hotkey='-1' <wn_error.o  >
+    v_prints() (13,34) <wn_error.o  >
+    v_settattrib_area() (13,34) w=12 h=1
+    hotstring() (13,48), hotkey='-1' <wn_loc.o    >
+    v_prints() (13,48) <wn_loc.o    >
+    v_settattrib_area() (13,48) w=12 h=1
+    hotstring() (5,6), hotkey='-1' <config~1.in >
+    v_prints() (5,6) <config~1.in >
+    v_settattrib_area() (5,6) w=12 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 50e0
+    hotstring() (5,6), hotkey='-1' <config~1.in~>
+    v_prints() (5,6) <config~1.in~>
+    v_settattrib_area() (5,6) w=12 h=1
+    hotstring() (5,20), hotkey='-1' <fortify.c   >
+    v_prints() (5,20) <fortify.c   >
+    v_settattrib_area() (5,20) w=12 h=1
+    hotstring() (5,34), hotkey='-1' <config~1.cac>
+    v_prints() (5,34) <config~1.cac>
+    v_settattrib_area() (5,34) w=12 h=1
+    hotstring() (5,48), hotkey='-1' <instal~1    >
+    v_prints() (5,48) <instal~1    >
+    v_settattrib_area() (5,48) w=12 h=1
+    hotstring() (6,6), hotkey='-1' <config~1.sta>
+    v_prints() (6,6) <config~1.sta>
+    v_settattrib_area() (6,6) w=12 h=1
+    hotstring() (6,20), hotkey='-1' <fortify.h   >
+    v_prints() (6,20) <fortify.h   >
+    v_settattrib_area() (6,20) w=12 h=1
+    hotstring() (6,34), hotkey='-1' <ufortify.h  >
+    v_prints() (6,34) <ufortify.h  >
+    v_settattrib_area() (6,34) w=12 h=1
+    hotstring() (6,48), hotkey='-1' <chksum.h    >
+    v_prints() (6,48) <chksum.h    >
+    v_settattrib_area() (6,48) w=12 h=1
+    hotstring() (7,6), hotkey='-1' <windio.o    >
+    v_prints() (7,6) <windio.o    >
+    v_settattrib_area() (7,6) w=12 h=1
+    hotstring() (7,20), hotkey='-1' <fortify.o   >
+    v_prints() (7,20) <fortify.o   >
+    v_settattrib_area() (7,20) w=12 h=1
+    hotstring() (7,34), hotkey='-1' <window.c    >
+    v_prints() (7,34) <window.c    >
+    v_settattrib_area() (7,34) w=12 h=1
+    hotstring() (7,48), hotkey='-1' <v_cursor.h  >
+    v_prints() (7,48) <v_cursor.h  >
+    v_settattrib_area() (7,48) w=12 h=1
+    hotstring() (8,6), hotkey='-1' <window.h    >
+    v_prints() (8,6) <window.h    >
+    v_settattrib_area() (8,6) w=12 h=1
+    hotstring() (8,20), hotkey='-1' <wn_desk.o   >
+    v_prints() (8,20) <wn_desk.o   >
+    v_settattrib_area() (8,20) w=12 h=1
+    hotstring() (8,34), hotkey='-1' <dialog.o    >
+    v_prints() (8,34) <dialog.o    >
+    v_settattrib_area() (8,34) w=12 h=1
+    hotstring() (8,48), hotkey='-1' <wn_desk.c   >
+    v_prints() (8,48) <wn_desk.c   >
+    v_settattrib_area() (8,48) w=12 h=1
+    hotstring() (9,6), hotkey='-1' <window.hlp  >
+    v_prints() (9,6) <window.hlp  >
+    v_settattrib_area() (9,6) w=12 h=1
+    hotstring() (9,20), hotkey='-1' <dir.o       >
+    v_prints() (9,20) <dir.o       >
+    v_settattrib_area() (9,20) w=12 h=1
+    hotstring() (9,34), hotkey='-1' <keys.c      >
+    v_prints() (9,34) <keys.c      >
+    v_settattrib_area() (9,34) w=12 h=1
+    hotstring() (9,48), hotkey='-1' <popup.c     >
+    v_prints() (9,48) <popup.c     >
+    v_settattrib_area() (9,48) w=12 h=1
+    hotstring() (10,6), hotkey='-1' <editstr.o   >
+    v_prints() (10,6) <editstr.o   >
+    v_settattrib_area() (10,6) w=12 h=1
+    hotstring() (10,20), hotkey='-1' <editstr.c   >
+    v_prints() (10,20) <editstr.c   >
+    v_settattrib_area() (10,20) w=12 h=1
+    hotstring() (10,34), hotkey='-1' <wn_clear.c  >
+    v_prints() (10,34) <wn_clear.c  >
+    v_settattrib_area() (10,34) w=12 h=1
+    hotstring() (10,48), hotkey='-1' <genindex.exe>
+    v_prints() (10,48) <genindex.exe>
+    v_settattrib_area() (10,48) w=12 h=1
+    hotstring() (11,6), hotkey='-1' <wn_bord.o   >
+    v_prints() (11,6) <wn_bord.o   >
+    v_settattrib_area() (11,6) w=12 h=1
+    hotstring() (11,20), hotkey='-1' <keys.o      >
+    v_prints() (11,20) <keys.o      >
+    v_settattrib_area() (11,20) w=12 h=1
+    hotstring() (11,34), hotkey='-1' <popup.o     >
+    v_prints() (11,34) <popup.o     >
+    v_settattrib_area() (11,34) w=12 h=1
+    hotstring() (11,48), hotkey='-1' <wn_clear.o  >
+    v_prints() (11,48) <wn_clear.o  >
+    v_settattrib_area() (11,48) w=12 h=1
+    hotstring() (12,6), hotkey='-1' <wn_error.c  >
+    v_prints() (12,6) <wn_error.c  >
+    v_settattrib_area() (12,6) w=12 h=1
+    hotstring() (12,20), hotkey='-1' <wn_debug.o  >
+    v_prints() (12,20) <wn_debug.o  >
+    v_settattrib_area() (12,20) w=12 h=1
+    hotstring() (12,34), hotkey='-1' <wn_error.o  >
+    v_prints() (12,34) <wn_error.o  >
+    v_settattrib_area() (12,34) w=12 h=1
+    hotstring() (12,48), hotkey='-1' <wn_loc.o    >
+    v_prints() (12,48) <wn_loc.o    >
+    v_settattrib_area() (12,48) w=12 h=1
+    hotstring() (13,6), hotkey='-1' <wn_log.c    >
+    v_prints() (13,6) <wn_log.c    >
+    v_settattrib_area() (13,6) w=12 h=1
+    hotstring() (13,20), hotkey='-1' <wn_print.c  >
+    v_prints() (13,20) <wn_print.c  >
+    v_settattrib_area() (13,20) w=12 h=1
+    hotstring() (13,34), hotkey='-1' <wn_shad.c   >
+    v_prints() (13,34) <wn_shad.c   >
+    v_settattrib_area() (13,34) w=12 h=1
+    hotstring() (13,48), hotkey='-1' <wn_title.c  >
+    v_prints() (13,48) <wn_title.c  >
+    v_settattrib_area() (13,48) w=12 h=1
+    hotstring() (5,6), hotkey='-1' <config~1.in~>
+    v_prints() (5,6) <config~1.in~>
+    v_settattrib_area() (5,6) w=12 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 51e0
+    hotstring() (5,6), hotkey='-1' <config~1.in~>
+    v_prints() (5,6) <config~1.in~>
+    v_settattrib_area() (5,6) w=12 h=1
+    hotstring() (5,20), hotkey='-1' <fortify.c   >
+    v_prints() (5,20) <fortify.c   >
+    v_settattrib_area() (5,20) w=12 h=1
+    hotstring() (5,34), hotkey='-1' <config~1.cac>
+    v_prints() (5,34) <config~1.cac>
+    v_settattrib_area() (5,34) w=12 h=1
+    hotstring() (5,48), hotkey='-1' <instal~1    >
+    v_prints() (5,48) <instal~1    >
+    v_settattrib_area() (5,48) w=12 h=1
+    hotstring() (6,6), hotkey='-1' <config~1.sta>
+    v_prints() (6,6) <config~1.sta>
+    v_settattrib_area() (6,6) w=12 h=1
+    hotstring() (6,20), hotkey='-1' <fortify.h   >
+    v_prints() (6,20) <fortify.h   >
+    v_settattrib_area() (6,20) w=12 h=1
+    hotstring() (6,34), hotkey='-1' <ufortify.h  >
+    v_prints() (6,34) <ufortify.h  >
+    v_settattrib_area() (6,34) w=12 h=1
+    hotstring() (6,48), hotkey='-1' <chksum.h    >
+    v_prints() (6,48) <chksum.h    >
+    v_settattrib_area() (6,48) w=12 h=1
+    hotstring() (7,6), hotkey='-1' <windio.o    >
+    v_prints() (7,6) <windio.o    >
+    v_settattrib_area() (7,6) w=12 h=1
+    hotstring() (7,20), hotkey='-1' <fortify.o   >
+    v_prints() (7,20) <fortify.o   >
+    v_settattrib_area() (7,20) w=12 h=1
+    hotstring() (7,34), hotkey='-1' <window.c    >
+    v_prints() (7,34) <window.c    >
+    v_settattrib_area() (7,34) w=12 h=1
+    hotstring() (7,48), hotkey='-1' <v_cursor.h  >
+    v_prints() (7,48) <v_cursor.h  >
+    v_settattrib_area() (7,48) w=12 h=1
+    hotstring() (8,6), hotkey='-1' <window.h    >
+    v_prints() (8,6) <window.h    >
+    v_settattrib_area() (8,6) w=12 h=1
+    hotstring() (8,20), hotkey='-1' <wn_desk.o   >
+    v_prints() (8,20) <wn_desk.o   >
+    v_settattrib_area() (8,20) w=12 h=1
+    hotstring() (8,34), hotkey='-1' <dialog.o    >
+    v_prints() (8,34) <dialog.o    >
+    v_settattrib_area() (8,34) w=12 h=1
+    hotstring() (8,48), hotkey='-1' <wn_desk.c   >
+    v_prints() (8,48) <wn_desk.c   >
+    v_settattrib_area() (8,48) w=12 h=1
+    hotstring() (9,6), hotkey='-1' <window.hlp  >
+    v_prints() (9,6) <window.hlp  >
+    v_settattrib_area() (9,6) w=12 h=1
+    hotstring() (9,20), hotkey='-1' <dir.o       >
+    v_prints() (9,20) <dir.o       >
+    v_settattrib_area() (9,20) w=12 h=1
+    hotstring() (9,34), hotkey='-1' <keys.c      >
+    v_prints() (9,34) <keys.c      >
+    v_settattrib_area() (9,34) w=12 h=1
+    hotstring() (9,48), hotkey='-1' <popup.c     >
+    v_prints() (9,48) <popup.c     >
+    v_settattrib_area() (9,48) w=12 h=1
+    hotstring() (10,6), hotkey='-1' <editstr.o   >
+    v_prints() (10,6) <editstr.o   >
+    v_settattrib_area() (10,6) w=12 h=1
+    hotstring() (10,20), hotkey='-1' <editstr.c   >
+    v_prints() (10,20) <editstr.c   >
+    v_settattrib_area() (10,20) w=12 h=1
+    hotstring() (10,34), hotkey='-1' <wn_clear.c  >
+    v_prints() (10,34) <wn_clear.c  >
+    v_settattrib_area() (10,34) w=12 h=1
+    hotstring() (10,48), hotkey='-1' <genindex.exe>
+    v_prints() (10,48) <genindex.exe>
+    v_settattrib_area() (10,48) w=12 h=1
+    hotstring() (11,6), hotkey='-1' <wn_bord.o   >
+    v_prints() (11,6) <wn_bord.o   >
+    v_settattrib_area() (11,6) w=12 h=1
+    hotstring() (11,20), hotkey='-1' <keys.o      >
+    v_prints() (11,20) <keys.o      >
+    v_settattrib_area() (11,20) w=12 h=1
+    hotstring() (11,34), hotkey='-1' <popup.o     >
+    v_prints() (11,34) <popup.o     >
+    v_settattrib_area() (11,34) w=12 h=1
+    hotstring() (11,48), hotkey='-1' <wn_clear.o  >
+    v_prints() (11,48) <wn_clear.o  >
+    v_settattrib_area() (11,48) w=12 h=1
+    hotstring() (12,6), hotkey='-1' <wn_error.c  >
+    v_prints() (12,6) <wn_error.c  >
+    v_settattrib_area() (12,6) w=12 h=1
+    hotstring() (12,20), hotkey='-1' <wn_debug.o  >
+    v_prints() (12,20) <wn_debug.o  >
+    v_settattrib_area() (12,20) w=12 h=1
+    hotstring() (12,34), hotkey='-1' <wn_error.o  >
+    v_prints() (12,34) <wn_error.o  >
+    v_settattrib_area() (12,34) w=12 h=1
+    hotstring() (12,48), hotkey='-1' <wn_loc.o    >
+    v_prints() (12,48) <wn_loc.o    >
+    v_settattrib_area() (12,48) w=12 h=1
+    hotstring() (13,6), hotkey='-1' <wn_log.c    >
+    v_prints() (13,6) <wn_log.c    >
+    v_settattrib_area() (13,6) w=12 h=1
+    hotstring() (13,20), hotkey='-1' <wn_print.c  >
+    v_prints() (13,20) <wn_print.c  >
+    v_settattrib_area() (13,20) w=12 h=1
+    hotstring() (13,34), hotkey='-1' <wn_shad.c   >
+    v_prints() (13,34) <wn_shad.c   >
+    v_settattrib_area() (13,34) w=12 h=1
+    hotstring() (13,48), hotkey='-1' <wn_title.c  >
+    v_prints() (13,48) <wn_title.c  >
+    v_settattrib_area() (13,48) w=12 h=1
+    hotstring() (5,6), hotkey='-1' <config~1.in~>
+    v_prints() (5,6) <config~1.in~>
+    v_settattrib_area() (5,6) w=12 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 49e0
+    hotstring() (5,6), hotkey='-1' <config~1.in~>
+    v_prints() (5,6) <config~1.in~>
+    v_settattrib_area() (5,6) w=12 h=1
+    hotstring() (5,20), hotkey='-1' <fortify.c   >
+    v_prints() (5,20) <fortify.c   >
+    v_settattrib_area() (5,20) w=12 h=1
+    hotstring() (5,34), hotkey='-1' <config~1.cac>
+    v_prints() (5,34) <config~1.cac>
+    v_settattrib_area() (5,34) w=12 h=1
+    hotstring() (5,48), hotkey='-1' <instal~1    >
+    v_prints() (5,48) <instal~1    >
+    v_settattrib_area() (5,48) w=12 h=1
+    hotstring() (6,6), hotkey='-1' <config~1.sta>
+    v_prints() (6,6) <config~1.sta>
+    v_settattrib_area() (6,6) w=12 h=1
+    hotstring() (6,20), hotkey='-1' <fortify.h   >
+    v_prints() (6,20) <fortify.h   >
+    v_settattrib_area() (6,20) w=12 h=1
+    hotstring() (6,34), hotkey='-1' <ufortify.h  >
+    v_prints() (6,34) <ufortify.h  >
+    v_settattrib_area() (6,34) w=12 h=1
+    hotstring() (6,48), hotkey='-1' <chksum.h    >
+    v_prints() (6,48) <chksum.h    >
+    v_settattrib_area() (6,48) w=12 h=1
+    hotstring() (7,6), hotkey='-1' <windio.o    >
+    v_prints() (7,6) <windio.o    >
+    v_settattrib_area() (7,6) w=12 h=1
+    hotstring() (7,20), hotkey='-1' <fortify.o   >
+    v_prints() (7,20) <fortify.o   >
+    v_settattrib_area() (7,20) w=12 h=1
+    hotstring() (7,34), hotkey='-1' <window.c    >
+    v_prints() (7,34) <window.c    >
+    v_settattrib_area() (7,34) w=12 h=1
+    hotstring() (7,48), hotkey='-1' <v_cursor.h  >
+    v_prints() (7,48) <v_cursor.h  >
+    v_settattrib_area() (7,48) w=12 h=1
+    hotstring() (8,6), hotkey='-1' <window.h    >
+    v_prints() (8,6) <window.h    >
+    v_settattrib_area() (8,6) w=12 h=1
+    hotstring() (8,20), hotkey='-1' <wn_desk.o   >
+    v_prints() (8,20) <wn_desk.o   >
+    v_settattrib_area() (8,20) w=12 h=1
+    hotstring() (8,34), hotkey='-1' <dialog.o    >
+    v_prints() (8,34) <dialog.o    >
+    v_settattrib_area() (8,34) w=12 h=1
+    hotstring() (8,48), hotkey='-1' <wn_desk.c   >
+    v_prints() (8,48) <wn_desk.c   >
+    v_settattrib_area() (8,48) w=12 h=1
+    hotstring() (9,6), hotkey='-1' <window.hlp  >
+    v_prints() (9,6) <window.hlp  >
+    v_settattrib_area() (9,6) w=12 h=1
+    hotstring() (9,20), hotkey='-1' <dir.o       >
+    v_prints() (9,20) <dir.o       >
+    v_settattrib_area() (9,20) w=12 h=1
+    hotstring() (9,34), hotkey='-1' <keys.c      >
+    v_prints() (9,34) <keys.c      >
+    v_settattrib_area() (9,34) w=12 h=1
+    hotstring() (9,48), hotkey='-1' <popup.c     >
+    v_prints() (9,48) <popup.c     >
+    v_settattrib_area() (9,48) w=12 h=1
+    hotstring() (10,6), hotkey='-1' <editstr.o   >
+    v_prints() (10,6) <editstr.o   >
+    v_settattrib_area() (10,6) w=12 h=1
+    hotstring() (10,20), hotkey='-1' <editstr.c   >
+    v_prints() (10,20) <editstr.c   >
+    v_settattrib_area() (10,20) w=12 h=1
+    hotstring() (10,34), hotkey='-1' <wn_clear.c  >
+    v_prints() (10,34) <wn_clear.c  >
+    v_settattrib_area() (10,34) w=12 h=1
+    hotstring() (10,48), hotkey='-1' <genindex.exe>
+    v_prints() (10,48) <genindex.exe>
+    v_settattrib_area() (10,48) w=12 h=1
+    hotstring() (11,6), hotkey='-1' <wn_bord.o   >
+    v_prints() (11,6) <wn_bord.o   >
+    v_settattrib_area() (11,6) w=12 h=1
+    hotstring() (11,20), hotkey='-1' <keys.o      >
+    v_prints() (11,20) <keys.o      >
+    v_settattrib_area() (11,20) w=12 h=1
+    hotstring() (11,34), hotkey='-1' <popup.o     >
+    v_prints() (11,34) <popup.o     >
+    v_settattrib_area() (11,34) w=12 h=1
+    hotstring() (11,48), hotkey='-1' <wn_clear.o  >
+    v_prints() (11,48) <wn_clear.o  >
+    v_settattrib_area() (11,48) w=12 h=1
+    hotstring() (12,6), hotkey='-1' <wn_error.c  >
+    v_prints() (12,6) <wn_error.c  >
+    v_settattrib_area() (12,6) w=12 h=1
+    hotstring() (12,20), hotkey='-1' <wn_debug.o  >
+    v_prints() (12,20) <wn_debug.o  >
+    v_settattrib_area() (12,20) w=12 h=1
+    hotstring() (12,34), hotkey='-1' <wn_error.o  >
+    v_prints() (12,34) <wn_error.o  >
+    v_settattrib_area() (12,34) w=12 h=1
+    hotstring() (12,48), hotkey='-1' <wn_loc.o    >
+    v_prints() (12,48) <wn_loc.o    >
+    v_settattrib_area() (12,48) w=12 h=1
+    hotstring() (13,6), hotkey='-1' <wn_log.c    >
+    v_prints() (13,6) <wn_log.c    >
+    v_settattrib_area() (13,6) w=12 h=1
+    hotstring() (13,20), hotkey='-1' <wn_print.c  >
+    v_prints() (13,20) <wn_print.c  >
+    v_settattrib_area() (13,20) w=12 h=1
+    hotstring() (13,34), hotkey='-1' <wn_shad.c   >
+    v_prints() (13,34) <wn_shad.c   >
+    v_settattrib_area() (13,34) w=12 h=1
+    hotstring() (13,48), hotkey='-1' <wn_title.c  >
+    v_prints() (13,48) <wn_title.c  >
+    v_settattrib_area() (13,48) w=12 h=1
+    hotstring() (5,6), hotkey='-1' <config~1.in~>
+    v_prints() (5,6) <config~1.in~>
+    v_settattrib_area() (5,6) w=12 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 48e0
+    hotstring() (5,6), hotkey='-1' <config~1.in >
+    v_prints() (5,6) <config~1.in >
+    v_settattrib_area() (5,6) w=12 h=1
+    hotstring() (5,20), hotkey='-1' <make-cfg.in >
+    v_prints() (5,20) <make-cfg.in >
+    v_settattrib_area() (5,20) w=12 h=1
+    hotstring() (5,34), hotkey='-1' <config~1    >
+    v_prints() (5,34) <config~1    >
+    v_settattrib_area() (5,34) w=12 h=1
+    hotstring() (5,48), hotkey='-1' <config.log  >
+    v_prints() (5,48) <config.log  >
+    v_settattrib_area() (5,48) w=12 h=1
+    hotstring() (6,6), hotkey='-1' <config~1.in~>
+    v_prints() (6,6) <config~1.in~>
+    v_settattrib_area() (6,6) w=12 h=1
+    hotstring() (6,20), hotkey='-1' <fortify.c   >
+    v_prints() (6,20) <fortify.c   >
+    v_settattrib_area() (6,20) w=12 h=1
+    hotstring() (6,34), hotkey='-1' <config~1.cac>
+    v_prints() (6,34) <config~1.cac>
+    v_settattrib_area() (6,34) w=12 h=1
+    hotstring() (6,48), hotkey='-1' <instal~1    >
+    v_prints() (6,48) <instal~1    >
+    v_settattrib_area() (6,48) w=12 h=1
+    hotstring() (7,6), hotkey='-1' <config~1.sta>
+    v_prints() (7,6) <config~1.sta>
+    v_settattrib_area() (7,6) w=12 h=1
+    hotstring() (7,20), hotkey='-1' <fortify.h   >
+    v_prints() (7,20) <fortify.h   >
+    v_settattrib_area() (7,20) w=12 h=1
+    hotstring() (7,34), hotkey='-1' <ufortify.h  >
+    v_prints() (7,34) <ufortify.h  >
+    v_settattrib_area() (7,34) w=12 h=1
+    hotstring() (7,48), hotkey='-1' <chksum.h    >
+    v_prints() (7,48) <chksum.h    >
+    v_settattrib_area() (7,48) w=12 h=1
+    hotstring() (8,6), hotkey='-1' <windio.o    >
+    v_prints() (8,6) <windio.o    >
+    v_settattrib_area() (8,6) w=12 h=1
+    hotstring() (8,20), hotkey='-1' <fortify.o   >
+    v_prints() (8,20) <fortify.o   >
+    v_settattrib_area() (8,20) w=12 h=1
+    hotstring() (8,34), hotkey='-1' <window.c    >
+    v_prints() (8,34) <window.c    >
+    v_settattrib_area() (8,34) w=12 h=1
+    hotstring() (8,48), hotkey='-1' <v_cursor.h  >
+    v_prints() (8,48) <v_cursor.h  >
+    v_settattrib_area() (8,48) w=12 h=1
+    hotstring() (9,6), hotkey='-1' <window.h    >
+    v_prints() (9,6) <window.h    >
+    v_settattrib_area() (9,6) w=12 h=1
+    hotstring() (9,20), hotkey='-1' <wn_desk.o   >
+    v_prints() (9,20) <wn_desk.o   >
+    v_settattrib_area() (9,20) w=12 h=1
+    hotstring() (9,34), hotkey='-1' <dialog.o    >
+    v_prints() (9,34) <dialog.o    >
+    v_settattrib_area() (9,34) w=12 h=1
+    hotstring() (9,48), hotkey='-1' <wn_desk.c   >
+    v_prints() (9,48) <wn_desk.c   >
+    v_settattrib_area() (9,48) w=12 h=1
+    hotstring() (10,6), hotkey='-1' <window.hlp  >
+    v_prints() (10,6) <window.hlp  >
+    v_settattrib_area() (10,6) w=12 h=1
+    hotstring() (10,20), hotkey='-1' <dir.o       >
+    v_prints() (10,20) <dir.o       >
+    v_settattrib_area() (10,20) w=12 h=1
+    hotstring() (10,34), hotkey='-1' <keys.c      >
+    v_prints() (10,34) <keys.c      >
+    v_settattrib_area() (10,34) w=12 h=1
+    hotstring() (10,48), hotkey='-1' <popup.c     >
+    v_prints() (10,48) <popup.c     >
+    v_settattrib_area() (10,48) w=12 h=1
+    hotstring() (11,6), hotkey='-1' <editstr.o   >
+    v_prints() (11,6) <editstr.o   >
+    v_settattrib_area() (11,6) w=12 h=1
+    hotstring() (11,20), hotkey='-1' <editstr.c   >
+    v_prints() (11,20) <editstr.c   >
+    v_settattrib_area() (11,20) w=12 h=1
+    hotstring() (11,34), hotkey='-1' <wn_clear.c  >
+    v_prints() (11,34) <wn_clear.c  >
+    v_settattrib_area() (11,34) w=12 h=1
+    hotstring() (11,48), hotkey='-1' <genindex.exe>
+    v_prints() (11,48) <genindex.exe>
+    v_settattrib_area() (11,48) w=12 h=1
+    hotstring() (12,6), hotkey='-1' <wn_bord.o   >
+    v_prints() (12,6) <wn_bord.o   >
+    v_settattrib_area() (12,6) w=12 h=1
+    hotstring() (12,20), hotkey='-1' <keys.o      >
+    v_prints() (12,20) <keys.o      >
+    v_settattrib_area() (12,20) w=12 h=1
+    hotstring() (12,34), hotkey='-1' <popup.o     >
+    v_prints() (12,34) <popup.o     >
+    v_settattrib_area() (12,34) w=12 h=1
+    hotstring() (12,48), hotkey='-1' <wn_clear.o  >
+    v_prints() (12,48) <wn_clear.o  >
+    v_settattrib_area() (12,48) w=12 h=1
+    hotstring() (13,6), hotkey='-1' <wn_error.c  >
+    v_prints() (13,6) <wn_error.c  >
+    v_settattrib_area() (13,6) w=12 h=1
+    hotstring() (13,20), hotkey='-1' <wn_debug.o  >
+    v_prints() (13,20) <wn_debug.o  >
+    v_settattrib_area() (13,20) w=12 h=1
+    hotstring() (13,34), hotkey='-1' <wn_error.o  >
+    v_prints() (13,34) <wn_error.o  >
+    v_settattrib_area() (13,34) w=12 h=1
+    hotstring() (13,48), hotkey='-1' <wn_loc.o    >
+    v_prints() (13,48) <wn_loc.o    >
+    v_settattrib_area() (13,48) w=12 h=1
+    hotstring() (5,6), hotkey='-1' <config~1.in >
+    v_prints() (5,6) <config~1.in >
+    v_settattrib_area() (5,6) w=12 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 50e0
+    hotstring() (5,6), hotkey='-1' <config~1.in~>
+    v_prints() (5,6) <config~1.in~>
+    v_settattrib_area() (5,6) w=12 h=1
+    hotstring() (5,20), hotkey='-1' <fortify.c   >
+    v_prints() (5,20) <fortify.c   >
+    v_settattrib_area() (5,20) w=12 h=1
+    hotstring() (5,34), hotkey='-1' <config~1.cac>
+    v_prints() (5,34) <config~1.cac>
+    v_settattrib_area() (5,34) w=12 h=1
+    hotstring() (5,48), hotkey='-1' <instal~1    >
+    v_prints() (5,48) <instal~1    >
+    v_settattrib_area() (5,48) w=12 h=1
+    hotstring() (6,6), hotkey='-1' <config~1.sta>
+    v_prints() (6,6) <config~1.sta>
+    v_settattrib_area() (6,6) w=12 h=1
+    hotstring() (6,20), hotkey='-1' <fortify.h   >
+    v_prints() (6,20) <fortify.h   >
+    v_settattrib_area() (6,20) w=12 h=1
+    hotstring() (6,34), hotkey='-1' <ufortify.h  >
+    v_prints() (6,34) <ufortify.h  >
+    v_settattrib_area() (6,34) w=12 h=1
+    hotstring() (6,48), hotkey='-1' <chksum.h    >
+    v_prints() (6,48) <chksum.h    >
+    v_settattrib_area() (6,48) w=12 h=1
+    hotstring() (7,6), hotkey='-1' <windio.o    >
+    v_prints() (7,6) <windio.o    >
+    v_settattrib_area() (7,6) w=12 h=1
+    hotstring() (7,20), hotkey='-1' <fortify.o   >
+    v_prints() (7,20) <fortify.o   >
+    v_settattrib_area() (7,20) w=12 h=1
+    hotstring() (7,34), hotkey='-1' <window.c    >
+    v_prints() (7,34) <window.c    >
+    v_settattrib_area() (7,34) w=12 h=1
+    hotstring() (7,48), hotkey='-1' <v_cursor.h  >
+    v_prints() (7,48) <v_cursor.h  >
+    v_settattrib_area() (7,48) w=12 h=1
+    hotstring() (8,6), hotkey='-1' <window.h    >
+    v_prints() (8,6) <window.h    >
+    v_settattrib_area() (8,6) w=12 h=1
+    hotstring() (8,20), hotkey='-1' <wn_desk.o   >
+    v_prints() (8,20) <wn_desk.o   >
+    v_settattrib_area() (8,20) w=12 h=1
+    hotstring() (8,34), hotkey='-1' <dialog.o    >
+    v_prints() (8,34) <dialog.o    >
+    v_settattrib_area() (8,34) w=12 h=1
+    hotstring() (8,48), hotkey='-1' <wn_desk.c   >
+    v_prints() (8,48) <wn_desk.c   >
+    v_settattrib_area() (8,48) w=12 h=1
+    hotstring() (9,6), hotkey='-1' <window.hlp  >
+    v_prints() (9,6) <window.hlp  >
+    v_settattrib_area() (9,6) w=12 h=1
+    hotstring() (9,20), hotkey='-1' <dir.o       >
+    v_prints() (9,20) <dir.o       >
+    v_settattrib_area() (9,20) w=12 h=1
+    hotstring() (9,34), hotkey='-1' <keys.c      >
+    v_prints() (9,34) <keys.c      >
+    v_settattrib_area() (9,34) w=12 h=1
+    hotstring() (9,48), hotkey='-1' <popup.c     >
+    v_prints() (9,48) <popup.c     >
+    v_settattrib_area() (9,48) w=12 h=1
+    hotstring() (10,6), hotkey='-1' <editstr.o   >
+    v_prints() (10,6) <editstr.o   >
+    v_settattrib_area() (10,6) w=12 h=1
+    hotstring() (10,20), hotkey='-1' <editstr.c   >
+    v_prints() (10,20) <editstr.c   >
+    v_settattrib_area() (10,20) w=12 h=1
+    hotstring() (10,34), hotkey='-1' <wn_clear.c  >
+    v_prints() (10,34) <wn_clear.c  >
+    v_settattrib_area() (10,34) w=12 h=1
+    hotstring() (10,48), hotkey='-1' <genindex.exe>
+    v_prints() (10,48) <genindex.exe>
+    v_settattrib_area() (10,48) w=12 h=1
+    hotstring() (11,6), hotkey='-1' <wn_bord.o   >
+    v_prints() (11,6) <wn_bord.o   >
+    v_settattrib_area() (11,6) w=12 h=1
+    hotstring() (11,20), hotkey='-1' <keys.o      >
+    v_prints() (11,20) <keys.o      >
+    v_settattrib_area() (11,20) w=12 h=1
+    hotstring() (11,34), hotkey='-1' <popup.o     >
+    v_prints() (11,34) <popup.o     >
+    v_settattrib_area() (11,34) w=12 h=1
+    hotstring() (11,48), hotkey='-1' <wn_clear.o  >
+    v_prints() (11,48) <wn_clear.o  >
+    v_settattrib_area() (11,48) w=12 h=1
+    hotstring() (12,6), hotkey='-1' <wn_error.c  >
+    v_prints() (12,6) <wn_error.c  >
+    v_settattrib_area() (12,6) w=12 h=1
+    hotstring() (12,20), hotkey='-1' <wn_debug.o  >
+    v_prints() (12,20) <wn_debug.o  >
+    v_settattrib_area() (12,20) w=12 h=1
+    hotstring() (12,34), hotkey='-1' <wn_error.o  >
+    v_prints() (12,34) <wn_error.o  >
+    v_settattrib_area() (12,34) w=12 h=1
+    hotstring() (12,48), hotkey='-1' <wn_loc.o    >
+    v_prints() (12,48) <wn_loc.o    >
+    v_settattrib_area() (12,48) w=12 h=1
+    hotstring() (13,6), hotkey='-1' <wn_log.c    >
+    v_prints() (13,6) <wn_log.c    >
+    v_settattrib_area() (13,6) w=12 h=1
+    hotstring() (13,20), hotkey='-1' <wn_print.c  >
+    v_prints() (13,20) <wn_print.c  >
+    v_settattrib_area() (13,20) w=12 h=1
+    hotstring() (13,34), hotkey='-1' <wn_shad.c   >
+    v_prints() (13,34) <wn_shad.c   >
+    v_settattrib_area() (13,34) w=12 h=1
+    hotstring() (13,48), hotkey='-1' <wn_title.c  >
+    v_prints() (13,48) <wn_title.c  >
+    v_settattrib_area() (13,48) w=12 h=1
+    hotstring() (5,6), hotkey='-1' <config~1.in~>
+    v_prints() (5,6) <config~1.in~>
+    v_settattrib_area() (5,6) w=12 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 4de0
+    hotstring() (5,6), hotkey='-1' <fortify.c   >
+    v_prints() (5,6) <fortify.c   >
+    v_settattrib_area() (5,6) w=12 h=1
+    hotstring() (5,20), hotkey='-1' <config~1.cac>
+    v_prints() (5,20) <config~1.cac>
+    v_settattrib_area() (5,20) w=12 h=1
+    hotstring() (5,34), hotkey='-1' <instal~1    >
+    v_prints() (5,34) <instal~1    >
+    v_settattrib_area() (5,34) w=12 h=1
+    hotstring() (5,48), hotkey='-1' <config~1.sta>
+    v_prints() (5,48) <config~1.sta>
+    v_settattrib_area() (5,48) w=12 h=1
+    hotstring() (6,6), hotkey='-1' <fortify.h   >
+    v_prints() (6,6) <fortify.h   >
+    v_settattrib_area() (6,6) w=12 h=1
+    hotstring() (6,20), hotkey='-1' <ufortify.h  >
+    v_prints() (6,20) <ufortify.h  >
+    v_settattrib_area() (6,20) w=12 h=1
+    hotstring() (6,34), hotkey='-1' <chksum.h    >
+    v_prints() (6,34) <chksum.h    >
+    v_settattrib_area() (6,34) w=12 h=1
+    hotstring() (6,48), hotkey='-1' <windio.o    >
+    v_prints() (6,48) <windio.o    >
+    v_settattrib_area() (6,48) w=12 h=1
+    hotstring() (7,6), hotkey='-1' <fortify.o   >
+    v_prints() (7,6) <fortify.o   >
+    v_settattrib_area() (7,6) w=12 h=1
+    hotstring() (7,20), hotkey='-1' <window.c    >
+    v_prints() (7,20) <window.c    >
+    v_settattrib_area() (7,20) w=12 h=1
+    hotstring() (7,34), hotkey='-1' <v_cursor.h  >
+    v_prints() (7,34) <v_cursor.h  >
+    v_settattrib_area() (7,34) w=12 h=1
+    hotstring() (7,48), hotkey='-1' <window.h    >
+    v_prints() (7,48) <window.h    >
+    v_settattrib_area() (7,48) w=12 h=1
+    hotstring() (8,6), hotkey='-1' <wn_desk.o   >
+    v_prints() (8,6) <wn_desk.o   >
+    v_settattrib_area() (8,6) w=12 h=1
+    hotstring() (8,20), hotkey='-1' <dialog.o    >
+    v_prints() (8,20) <dialog.o    >
+    v_settattrib_area() (8,20) w=12 h=1
+    hotstring() (8,34), hotkey='-1' <wn_desk.c   >
+    v_prints() (8,34) <wn_desk.c   >
+    v_settattrib_area() (8,34) w=12 h=1
+    hotstring() (8,48), hotkey='-1' <window.hlp  >
+    v_prints() (8,48) <window.hlp  >
+    v_settattrib_area() (8,48) w=12 h=1
+    hotstring() (9,6), hotkey='-1' <dir.o       >
+    v_prints() (9,6) <dir.o       >
+    v_settattrib_area() (9,6) w=12 h=1
+    hotstring() (9,20), hotkey='-1' <keys.c      >
+    v_prints() (9,20) <keys.c      >
+    v_settattrib_area() (9,20) w=12 h=1
+    hotstring() (9,34), hotkey='-1' <popup.c     >
+    v_prints() (9,34) <popup.c     >
+    v_settattrib_area() (9,34) w=12 h=1
+    hotstring() (9,48), hotkey='-1' <editstr.o   >
+    v_prints() (9,48) <editstr.o   >
+    v_settattrib_area() (9,48) w=12 h=1
+    hotstring() (10,6), hotkey='-1' <editstr.c   >
+    v_prints() (10,6) <editstr.c   >
+    v_settattrib_area() (10,6) w=12 h=1
+    hotstring() (10,20), hotkey='-1' <wn_clear.c  >
+    v_prints() (10,20) <wn_clear.c  >
+    v_settattrib_area() (10,20) w=12 h=1
+    hotstring() (10,34), hotkey='-1' <genindex.exe>
+    v_prints() (10,34) <genindex.exe>
+    v_settattrib_area() (10,34) w=12 h=1
+    hotstring() (10,48), hotkey='-1' <wn_bord.o   >
+    v_prints() (10,48) <wn_bord.o   >
+    v_settattrib_area() (10,48) w=12 h=1
+    hotstring() (11,6), hotkey='-1' <keys.o      >
+    v_prints() (11,6) <keys.o      >
+    v_settattrib_area() (11,6) w=12 h=1
+    hotstring() (11,20), hotkey='-1' <popup.o     >
+    v_prints() (11,20) <popup.o     >
+    v_settattrib_area() (11,20) w=12 h=1
+    hotstring() (11,34), hotkey='-1' <wn_clear.o  >
+    v_prints() (11,34) <wn_clear.o  >
+    v_settattrib_area() (11,34) w=12 h=1
+    hotstring() (11,48), hotkey='-1' <wn_error.c  >
+    v_prints() (11,48) <wn_error.c  >
+    v_settattrib_area() (11,48) w=12 h=1
+    hotstring() (12,6), hotkey='-1' <wn_debug.o  >
+    v_prints() (12,6) <wn_debug.o  >
+    v_settattrib_area() (12,6) w=12 h=1
+    hotstring() (12,20), hotkey='-1' <wn_error.o  >
+    v_prints() (12,20) <wn_error.o  >
+    v_settattrib_area() (12,20) w=12 h=1
+    hotstring() (12,34), hotkey='-1' <wn_loc.o    >
+    v_prints() (12,34) <wn_loc.o    >
+    v_settattrib_area() (12,34) w=12 h=1
+    hotstring() (12,48), hotkey='-1' <wn_log.c    >
+    v_prints() (12,48) <wn_log.c    >
+    v_settattrib_area() (12,48) w=12 h=1
+    hotstring() (13,6), hotkey='-1' <wn_print.c  >
+    v_prints() (13,6) <wn_print.c  >
+    v_settattrib_area() (13,6) w=12 h=1
+    hotstring() (13,20), hotkey='-1' <wn_shad.c   >
+    v_prints() (13,20) <wn_shad.c   >
+    v_settattrib_area() (13,20) w=12 h=1
+    hotstring() (13,34), hotkey='-1' <wn_title.c  >
+    v_prints() (13,34) <wn_title.c  >
+    v_settattrib_area() (13,34) w=12 h=1
+    hotstring() (13,48), hotkey='-1' <wn_log.o    >
+    v_prints() (13,48) <wn_log.o    >
+    v_settattrib_area() (13,48) w=12 h=1
+    hotstring() (5,6), hotkey='-1' <fortify.c   >
+    v_prints() (5,6) <fortify.c   >
+    v_settattrib_area() (5,6) w=12 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 4de0
+    hotstring() (5,6), hotkey='-1' <config~1.cac>
+    v_prints() (5,6) <config~1.cac>
+    v_settattrib_area() (5,6) w=12 h=1
+    hotstring() (5,20), hotkey='-1' <instal~1    >
+    v_prints() (5,20) <instal~1    >
+    v_settattrib_area() (5,20) w=12 h=1
+    hotstring() (5,34), hotkey='-1' <config~1.sta>
+    v_prints() (5,34) <config~1.sta>
+    v_settattrib_area() (5,34) w=12 h=1
+    hotstring() (5,48), hotkey='-1' <fortify.h   >
+    v_prints() (5,48) <fortify.h   >
+    v_settattrib_area() (5,48) w=12 h=1
+    hotstring() (6,6), hotkey='-1' <ufortify.h  >
+    v_prints() (6,6) <ufortify.h  >
+    v_settattrib_area() (6,6) w=12 h=1
+    hotstring() (6,20), hotkey='-1' <chksum.h    >
+    v_prints() (6,20) <chksum.h    >
+    v_settattrib_area() (6,20) w=12 h=1
+    hotstring() (6,34), hotkey='-1' <windio.o    >
+    v_prints() (6,34) <windio.o    >
+    v_settattrib_area() (6,34) w=12 h=1
+    hotstring() (6,48), hotkey='-1' <fortify.o   >
+    v_prints() (6,48) <fortify.o   >
+    v_settattrib_area() (6,48) w=12 h=1
+    hotstring() (7,6), hotkey='-1' <window.c    >
+    v_prints() (7,6) <window.c    >
+    v_settattrib_area() (7,6) w=12 h=1
+    hotstring() (7,20), hotkey='-1' <v_cursor.h  >
+    v_prints() (7,20) <v_cursor.h  >
+    v_settattrib_area() (7,20) w=12 h=1
+    hotstring() (7,34), hotkey='-1' <window.h    >
+    v_prints() (7,34) <window.h    >
+    v_settattrib_area() (7,34) w=12 h=1
+    hotstring() (7,48), hotkey='-1' <wn_desk.o   >
+    v_prints() (7,48) <wn_desk.o   >
+    v_settattrib_area() (7,48) w=12 h=1
+    hotstring() (8,6), hotkey='-1' <dialog.o    >
+    v_prints() (8,6) <dialog.o    >
+    v_settattrib_area() (8,6) w=12 h=1
+    hotstring() (8,20), hotkey='-1' <wn_desk.c   >
+    v_prints() (8,20) <wn_desk.c   >
+    v_settattrib_area() (8,20) w=12 h=1
+    hotstring() (8,34), hotkey='-1' <window.hlp  >
+    v_prints() (8,34) <window.hlp  >
+    v_settattrib_area() (8,34) w=12 h=1
+    hotstring() (8,48), hotkey='-1' <dir.o       >
+    v_prints() (8,48) <dir.o       >
+    v_settattrib_area() (8,48) w=12 h=1
+    hotstring() (9,6), hotkey='-1' <keys.c      >
+    v_prints() (9,6) <keys.c      >
+    v_settattrib_area() (9,6) w=12 h=1
+    hotstring() (9,20), hotkey='-1' <popup.c     >
+    v_prints() (9,20) <popup.c     >
+    v_settattrib_area() (9,20) w=12 h=1
+    hotstring() (9,34), hotkey='-1' <editstr.o   >
+    v_prints() (9,34) <editstr.o   >
+    v_settattrib_area() (9,34) w=12 h=1
+    hotstring() (9,48), hotkey='-1' <editstr.c   >
+    v_prints() (9,48) <editstr.c   >
+    v_settattrib_area() (9,48) w=12 h=1
+    hotstring() (10,6), hotkey='-1' <wn_clear.c  >
+    v_prints() (10,6) <wn_clear.c  >
+    v_settattrib_area() (10,6) w=12 h=1
+    hotstring() (10,20), hotkey='-1' <genindex.exe>
+    v_prints() (10,20) <genindex.exe>
+    v_settattrib_area() (10,20) w=12 h=1
+    hotstring() (10,34), hotkey='-1' <wn_bord.o   >
+    v_prints() (10,34) <wn_bord.o   >
+    v_settattrib_area() (10,34) w=12 h=1
+    hotstring() (10,48), hotkey='-1' <keys.o      >
+    v_prints() (10,48) <keys.o      >
+    v_settattrib_area() (10,48) w=12 h=1
+    hotstring() (11,6), hotkey='-1' <popup.o     >
+    v_prints() (11,6) <popup.o     >
+    v_settattrib_area() (11,6) w=12 h=1
+    hotstring() (11,20), hotkey='-1' <wn_clear.o  >
+    v_prints() (11,20) <wn_clear.o  >
+    v_settattrib_area() (11,20) w=12 h=1
+    hotstring() (11,34), hotkey='-1' <wn_error.c  >
+    v_prints() (11,34) <wn_error.c  >
+    v_settattrib_area() (11,34) w=12 h=1
+    hotstring() (11,48), hotkey='-1' <wn_debug.o  >
+    v_prints() (11,48) <wn_debug.o  >
+    v_settattrib_area() (11,48) w=12 h=1
+    hotstring() (12,6), hotkey='-1' <wn_error.o  >
+    v_prints() (12,6) <wn_error.o  >
+    v_settattrib_area() (12,6) w=12 h=1
+    hotstring() (12,20), hotkey='-1' <wn_loc.o    >
+    v_prints() (12,20) <wn_loc.o    >
+    v_settattrib_area() (12,20) w=12 h=1
+    hotstring() (12,34), hotkey='-1' <wn_log.c    >
+    v_prints() (12,34) <wn_log.c    >
+    v_settattrib_area() (12,34) w=12 h=1
+    hotstring() (12,48), hotkey='-1' <wn_print.c  >
+    v_prints() (12,48) <wn_print.c  >
+    v_settattrib_area() (12,48) w=12 h=1
+    hotstring() (13,6), hotkey='-1' <wn_shad.c   >
+    v_prints() (13,6) <wn_shad.c   >
+    v_settattrib_area() (13,6) w=12 h=1
+    hotstring() (13,20), hotkey='-1' <wn_title.c  >
+    v_prints() (13,20) <wn_title.c  >
+    v_settattrib_area() (13,20) w=12 h=1
+    hotstring() (13,34), hotkey='-1' <wn_log.o    >
+    v_prints() (13,34) <wn_log.o    >
+    v_settattrib_area() (13,34) w=12 h=1
+    hotstring() (13,48), hotkey='-1' <wn_os.o     >
+    v_prints() (13,48) <wn_os.o     >
+    v_settattrib_area() (13,48) w=12 h=1
+    hotstring() (5,6), hotkey='-1' <config~1.cac>
+    v_prints() (5,6) <config~1.cac>
+    v_settattrib_area() (5,6) w=12 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 11b
+    wn_close(bc720,*.*)
+    del_wn_list(bc720,*.*)
+      --- aff78 ((null)) level: 1
+      --- b0090 ((null)) level: 2
+    wn_top(b0090,(null))
+    wn_restore(b0090,(null)) (1,1)-(12,6)
+    v_puttext(), (1,1)-(12,6) 
+    wn_update() START **** 
+      wn_save(b0090,(null)) (1,1)-(12,6) 
+      v_gettext(), (1,1)-(12,6) 
+      wn_restore(aff78,(null)) (0,0)-(79,0)
+      v_puttext(), (0,0)-(79,0) 
+      wn_restore(b0090,(null)) (1,1)-(12,6)
+      v_puttext(), (1,1)-(12,6) 
+    wn_update() END ****
+  END POPUP()
+  wn_close(b0090,(null))
+  del_wn_list(b0090,(null))
+    --- aff78 ((null)) level: 1
+  wn_top(aff78,(null))
+  wn_restore(aff78,(null)) (0,0)-(79,0)
+  v_puttext(), (0,0)-(79,0) 
+  wn_update() START **** 
+    wn_save(aff78,(null)) (0,0)-(79,0) 
+    v_gettext(), (0,0)-(79,0) 
+    wn_restore(aff78,(null)) (0,0)-(79,0)
+    v_puttext(), (0,0)-(79,0) 
+  wn_update() END ****
+  choise = 44
+  mptr = 220fc
+  START POPUP()
+    wn_open() b0090: ( 1, 1) w=12 h= 6
+    wn_open() WITH BORDER    wn_open() xsize = 12   ysize = 6
+    wn_open() row = 1   col = 1
+    wn_open() xsize = 12   ysize = 6
+    wn_open(5) (2,2) x2 = 11  y2=5
+    Variables are initialized
+    wn_save(aff78,(null)) (0,0)-(79,0) 
+    v_gettext(), (0,0)-(79,0) 
+    add_wn_list(b0090,(null))
+    wn_border(b0090,(null), style =  1)
+    v_drawbox() (1,1) w=12 h=6
+    wn_clear(b0090,(null)) (2,2) x2=11  y2=5
+    l=10   h=4   color=112   
+    v_fillarea() (2,2) w=10 h=4
+    printing popup menu items:
+    hotstring() (2,2), hotkey='0' <Directory >
+    v_prints() (2,2) <Directory >
+    v_settattrib_area() (2,2) w=10 h=1
+    hotstring() (3,2), hotkey='0' <Change dir>
+    v_prints() (3,2) <Change dir>
+    v_settattrib_area() (3,2) w=10 h=1
+    hotstring() (4,2), hotkey='0' <OS shell  >
+    v_prints() (4,2) <OS shell  >
+    v_settattrib_area() (4,2) w=10 h=1
+    hotstring() (5,2), hotkey='0' <Exit      >
+    v_prints() (5,2) <Exit      >
+    v_settattrib_area() (5,2) w=10 h=1
+    v_settattrib_area() (3,2) w=10 h=1
+    hotstring() (3,2), hotkey='0' <Change dir>
+    v_prints() (3,2) <Change dir>
+    v_settattrib_area() (3,2) w=10 h=1
+    v_settattrib_area() (3,2) w=10 h=1
+    waitkey()
+    key_pressed() TRUE
+    TRUE 
+    scancode = 1265
+    OTHER KEY
+    wn_exit()
+    exit_pulldown()
+    wn_close(aff78,(null))
+    del_wn_list(aff78,(null))
+      --- b0090 ((null)) level: 1
+    wn_top(b0090,(null))
+    wn_update() START **** 
+      wn_save(b0090,(null)) (1,1)-(12,6) 
+      v_gettext(), (1,1)-(12,6) 
+      wn_restore(b0090,(null)) (1,1)-(12,6)
+      v_puttext(), (1,1)-(12,6) 
+    wn_update() END ****
+    wn_close(b0090,(null))
+    del_wn_list(b0090,(null))
+    wn_update() START **** 
+    wn_update() END ****
+    v_restorescreen()
+    v_puttext(), (0,0)-(80,43) 

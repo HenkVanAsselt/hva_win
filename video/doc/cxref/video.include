@@ -1,0 +1,5 @@
+v_video.h
+v_init.c d:/djgpp/include/stdio.h d:/djgpp/include/dos.h d:/djgpp/include/bios.h d:/djgpp/include/sys/movedata.h %v_video.h
+v_font.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/dos.h d:/djgpp/include/bios.h d:/djgpp/include/sys/movedata.h %v_video.h
+v_curs.c d:/djgpp/include/bios.h %v_video.h
+v_adapt.c d:/djgpp/include/dos.h d:/djgpp/include/bios.h d:/djgpp/include/sys/movedata.h %v_video.h

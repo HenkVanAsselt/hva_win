@@ -1,0 +1,11 @@
+v_init.c _cursvar 2 endwin initscr resize_screen
+v_init.c curscr 2 endwin resize_screen
+v_init.c stdscr 2 endwin initscr resize_screen
+v_init.c _default_lines 2
+v_init.c LINES 2 initscr resize_screen
+v_init.c COLS 2 initscr resize_screen
+v_font.c _cursvar 4 v_set_80x25 v_set_font
+v_font.c _default_lines 4
+v_curs.c cursorstart 1 v_cursoron %v_get_cursor_shape v_set_cursor_shape
+v_curs.c cursorend 1 v_cursoron %v_get_cursor_shape v_set_cursor_shape
+v_curs.c _cursvar 4 v_get_rows v_gotoxy

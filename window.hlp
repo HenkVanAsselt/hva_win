@@ -1,0 +1,1190 @@
+
+
+:dialog_menu()
+
+^dialog_menu()
+
+    FUNCTION: dialog_menu()
+     PURPOSE: Perform a dialog with user
+ DESCRIPTION: -
+     RETURNS: choise made by user
+
+
+:show_dir()
+
+^show_dir()
+
+    FUNCTION: show_dir()
+     PURPOSE: Show directory
+ DESCRIPTION: Asks for a filemask and shows directory
+              If edit window was escaped with ESC, don't show the
+              directory
+     RETURNS: nothing
+
+
+:change_dir()
+
+^change_dir()
+
+    FUNCTION: change_dir()
+     PURPOSE: change directory
+ DESCRIPTION: shows path of current directory, and will ask for a new
+              path. If this edit window is escaped by 'ESC' nothing
+              will be done, otherwise we change the current directory
+     RETURNS: nothing
+
+
+:calc_first_file()
+
+^calc_first_file()
+
+    FUNCTION: calc_first_file()
+     PURPOSE: Calculate number of first file in the window
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:check_filenr()
+
+^check_filenr()
+
+    FUNCTION: check_filenr()
+     PURPOSE: Check if filenr within valid range
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:calc_row_col()
+
+^calc_row_col()
+
+    FUNCTION: calc_row_col()
+     PURPOSE: Calculate row and column of a cell number in the window
+ DESCRIPTION: -
+     RETURNS: nothing.
+
+
+:display_dir()
+
+^display_dir()
+
+    FUNCTION: display_dir()
+     PURPOSE: Display directory in a window
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:get_files()
+
+^get_files()
+
+    FUNCTION: get_files()
+     PURPOSE: get filenames and subdirs of current directory
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:get_dir()
+
+^get_dir()
+
+    FUNCTION: get_dir()
+     PURPOSE: Show directory in a window and pick a file
+ DESCRIPTION: Searches all files in the current directory with
+              the mask given, and show them in a window like TC.
+              The name of the file picked will be copied in the parameter
+              'filename'
+     RETURNS: NULL if this function is escaped by <ESC>
+
+
+:main()
+^main()
+
+FUNCTION: main() --- Only for stand alone testing 
+PURPOSE: make this a stand alone program 
+DESCRIPTION: call get_dir function 
+RETURNS: nothing 
+
+
+:editstr()
+
+^editstr()
+
+    FUNCTION: editstr()
+     PURPOSE: Edit string
+ DESCRIPTION: Feels like the TURBO integrated enviroment string editing
+     RETURNS: Last character typed
+
+
+:display_line()
+
+^display_line()
+
+    FUNCTION: display_line()
+     PURPOSE: Display line for editstr()
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:func_index()
+
+^func_index()
+
+    FUNCTION: func_index()
+     PURPOSE: Calculate index of a function key
+ DESCRIPTION: -
+     RETURNS: Calculated index to the array of function handlers
+
+
+:init_funkey()
+
+^init_funkey()
+
+    FUNCTION: init_funkey()
+     PURPOSE: Initialize a function key
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:do_funkey()
+
+^do_funkey()
+
+    FUNCTION: do_funkey()
+     PURPOSE: Perform function, assigned to the function key
+      SYNTAX: int do_funkey(int key);
+              int key : code of (function) key to perform function on
+ DESCRIPTION:
+     RETURNS: 0 if function performed (function available)
+
+
+:disp_funkeys()
+
+^disp_funkeys()
+
+    FUNCTION: disp_funkeys()
+     PURPOSE: Display function keys on screen
+ DESCRIPTION: Display function keys in lower 4 lines of display
+              0 = Hide function key display
+              1 = normal function keys
+              2 = shifted function keys
+              3 = CTRL function keys
+              4 = ALT function keys
+     RETURNS: nothing
+
+
+:exit_funkey()
+
+^exit_funkey()
+
+    FUNCTION: exit_funkey()
+     PURPOSE: Exit the funkey routine
+ DESCRIPTION: Closes the function key window
+     RETURNS: nothing
+
+
+:trimstr(char
+
+^trimstr(char
+
+   FUNCTION: trimstr(char *s)
+    PURPOSE: Trim leading and trailing blanks of a string
+ DESRIPTION: -
+    RETURNS: TRUE if all OK, FALSE if it 's' is a NULL pointer
+
+
+:main()
+
+^main()
+
+   FUNCTION: main()
+    PURPOSE: main function of 'GENINDEX.C'
+ DESRIPTION: -
+    RETURNS: Alway's returns 0
+
+
+:display_stack()
+
+^display_stack()
+
+    FUNCTION: display_stack()
+     PURPOSE: Display contents of the stack
+ DESCRIPTION: LIFO buffer
+     RETURNS: nothing
+
+
+:push_subject()
+
+^push_subject()
+
+    FUNCTION: push_subject()
+     PURPOSE: push an item on the stack
+ DESCRIPTION: LIFO buffer
+     RETURNS: New top of stack
+
+
+:pop_subject()
+
+^pop_subject()
+
+    FUNCTION: pop_subject()
+     PURPOSE: pop an item from the stack
+ DESCRIPTION: LIFO buffer
+     RETURNS: item number
+
+
+:init_help(char
+
+^init_help(char
+
+   FUNCTION: init_help(char *help_file_name)
+    PURPOSE: Will initialize help functions and parameters
+ DESRIPTION: Initializing will be done by help() function and
+             includes allocation of memory and building the
+             topic index table.
+    RETURNS: TRUE if successfull, FALSE if not
+
+
+:help()
+
+^help()
+
+   FUNCTION: help()
+    PURPOSE: Show help text about 'subject'
+ DESRIPTION: When the first character of 'subject' is a ':' then
+             the help text will be displayed.
+    RETURNS: TRUE if successfull, FALSE if not
+
+
+:find_topiclink()
+
+^find_topiclink()
+
+    FUNCTION: find_topiclink()
+     PURPOSE: Find the index in the topic link list
+ DESCRIPTION: flag = -1: find index of previous topic link
+              flag =  0: find index of topic link in this line
+              flag =  1: find index of next topic link
+     RETURNS: If there is no next or previous topic link, the index of the
+
+
+:show_line()
+
+^show_line()
+
+    FUNCTION: show_line()
+     PURPOSE: Show a line on a help page
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:show_topic(long
+
+^show_topic(long
+
+   FUNCTION: show_topic(long offset)
+    PURPOSE: Show text of current topic
+ DESRIPTION: -
+    RETURNS: Nothing
+
+
+:filbuf()
+
+^filbuf()
+
+   FUNCTION: filbuf()
+    PURPOSE: Fill text buffer with text from helpfile
+ DESRIPTION: If flag = 0 then read only first screen of topic
+             If flag = 1 then read complete topic
+             If flag > 1 then return immediately
+    RETURNS: Number of lines on the page
+
+
+:exit_help()
+
+^exit_help()
+
+    FUNCTION: exit_help()
+     PURPOSE: exit from windowed help function
+ DESCRIPTION: free allocated memory for topic key buffer
+     RETURNS: nothing
+
+
+:do_action()
+
+^do_action()
+
+    FUNCTION: do_action()
+     PURPOSE: Perform action if a item is selected by a hotkey or
+              by <ENTER>
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:popup()
+
+^popup()
+
+   FUNCTION: popup()
+    PURPOSE: Make and react on a popup menu
+ DESRIPTION: This function creates an popup menu with text and
+             values of referenced data. The upperleft corner of
+             the popup menu is (row,col)
+    RETURNS: Hot-key of selected item if available, else
+
+
+:show_bar()
+
+^show_bar()
+
+    FUNCTION: show_bar()
+     PURPOSE: Show the bar of the pulldown menu
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:pulldown()
+
+^pulldown()
+
+   FUNCTION: pulldown()
+    PURPOSE: Show pulldown menu bar and react on key strokes
+      INPUT: MENU_HEAD *shead  : pointer to header information array
+             int       ikey    : Default key to react on
+             char      *help   : Pointer to help subject
+ DESRIPTION: -
+    RETURNS: 0 or valid key scan-code
+
+
+:calc_pulldownbar()
+
+^calc_pulldownbar()
+
+    FUNCTION: calc_pulldownbar()
+     PURPOSE: Perform calculations for the pulldown bar
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:mem_pulldownbar()
+
+^mem_pulldownbar()
+
+    FUNCTION: mem_pulldownbar()
+     PURPOSE: Perform memory manupilation for the pulldown bar
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:pulldown_bar()
+
+^pulldown_bar()
+
+    FUNCTION: pulldown_bar()
+     PURPOSE: perform initial calculations for activiting 'pulldown'
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:exit_pulldown()
+
+^exit_pulldown()
+
+    FUNCTION: exit_pulldown()
+     PURPOSE: exit from pulldown menu
+ DESCRIPTION: free's allocated memory
+     RETURNS: nothing
+
+
+:setup_menu()
+
+^setup_menu()
+
+   FUNCTION: setup_menu()
+    PURPOSE: Setup a menu item
+ DESRIPTION: This way a menu can be defined as an auto variable
+             within a function. The variables are in the same order
+             as in the WINDOW type definition
+    RETURNS: nothing
+
+
+:init_menu()
+
+^init_menu()
+
+   FUNCTION: init_menu()
+    PURPOSE: Initialze a menu structure
+ DESRIPTION: -
+    RETURNS: nothing
+
+
+:set_display_colors()
+
+^set_display_colors()
+
+   FUNCTION: set_display_colors()
+    PURPOSE: Set display colors for COLOR or MONO monitor
+ DESRIPTION: Sets the global variables according to monitor type
+             defined. This can be MONO or COLOR.
+    RETURNS: nothing
+
+
+:get_cursor_shape()
+
+^get_cursor_shape()
+
+    FUNCTION: get_cursor_shape()
+     PURPOSE: initialize cursor
+ DESCRIPTION: Get cursor shape by calling int 10h, function 03h
+              The shape will be stored int the local variables
+              'cursorstart' and 'cursorend'
+     RETURNS: nothing
+
+
+:cursoroff()
+
+^cursoroff()
+
+    FUNCTION: cursoroff()
+     PURPOSE: Turn cursor off
+ DESCRIPTION: Hide cursor by calling int 10h function 1.
+              The first and last screen line of the cursor will
+              be set to 20h. The values are out of the valid range
+              so the cursor will disappear.
+              First we will save the current cursor shape by calling
+              get_cursor_shape()
+     RETURNS: nothing
+
+
+:cursoron()
+
+^cursoron()
+
+    FUNCTION: cursoron()
+     PURPOSE: Turn cursor on
+ DESCRIPTION: Show the cursor by calling int 10h function 01h.
+              The first and last screenline of the cursor have
+              previously been saved by get_cursor_shape().
+     RETURNS: nothing
+
+
+:clrscr()
+
+^clrscr()
+
+    FUNCTION: clrscr()
+     PURPOSE: clear screen
+ DESCRIPTION: This function is only to be used with MSC.
+              This is a standard function in TC. We will clear the
+              entire screen by filling a 'window' with spaces with
+              BLACK background and WHITE foreground.
+     RETURNS: Nothing
+
+
+:setcurpos()
+
+^setcurpos()
+
+    FUNCTION: setcurpos()
+     PURPOSE: Set cursor on (row,col).
+ DESCRIPTION: Uses BIOS interrupt 10h, function 02h.
+              The origin of the screen is (0,0).
+     RETURNS: nothing
+
+
+:set_cursor_shape()
+
+^set_cursor_shape()
+
+    FUNCTION: set_cursor_shape()
+     PURPOSE: Set the shape of the cursor
+ DESCRIPTION: Set the shape by setting the local variables 'cursorstart'
+              and 'cursorend' and calling cursoron()
+     RETURNS: nothing
+
+
+:getcurpos()
+
+^getcurpos()
+
+    FUNCTION: getcurpos()
+     PURPOSE: Get the position of the cursor on the screen.
+ DESCRIPTION: Uses BIOS interrupt 10h, function 03h
+              The origin of the screen is (0,0)
+     RETURNS: nothing
+
+
+:fillone()
+
+^fillone()
+
+    FUNCTION: fillone()
+     PURPOSE: Fill a screen position
+ DESCRIPTION: Put character 'c' on screen on position (row,col) with
+              attribute 'att'.
+              The origin of the screen is (0,0).
+              Uses int 10h function 09h
+     RETURNS: nothing
+
+
+:printone()
+
+^printone()
+
+    FUNCTION: printone()
+     PURPOSE: print a character on (row,col) using the current
+              attribute
+ DESCRIPTION: uses BIOS intterupt 10h, function 0Ah
+     RETURNS:
+
+
+:setone()
+
+^setone()
+
+    FUNCTION: setone()
+     PURPOSE: set attribute of (row,col).
+ DESCRIPTION: uses BIOS interrupt 10h, functions 08h and 09h
+     RETURNS: nothing
+
+
+:printcenter()
+
+^printcenter()
+
+    FUNCTION: printcenter()
+     PURPOSE: Print a string centered around (row,col).
+ DESCRIPTION: Calculates center and calls printstring()
+     RETURNS: nothing
+
+
+:printhotcenter()
+
+^printhotcenter()
+
+    FUNCTION: printhotcenter()
+     PURPOSE: Print a hotstring centered around (row,col)
+ DESCRIPTION: Calculates center and calls hotstring() with no
+              hotkey (i.e. -1)
+     RETURNS: nothing
+
+
+:hotstring()
+
+^hotstring()
+
+    FUNCTION: hotstring()
+     PURPOSE: print a string with the 'hotkey' set
+ DESCRIPTION: Print the string on the screen, set the attribute of
+              the entire string and set the attribute of the 'hotkey'
+     RETURNS: nothing
+
+
+:vb_scroll()
+
+^vb_scroll()
+
+    FUNCTION: vb_scroll()
+     PURPOSE: scroll up a region of the screen. If amount is negative,
+              then scroll down.
+ DESCRIPTION: Adapted from C-Chest by Allen Holub, pp. 347,348
+     RETURNS: nothing
+
+
+:savescreen()
+
+^savescreen()
+
+    FUNCTION: savescreen()
+     PURPOSE: save complete DOS screen
+ DESCRIPTION: Allocates memory and save screen to it
+     RETURNS: Pointer to memory area with saved screen
+
+
+:restorescreen
+
+^restorescreen
+
+    FUNCTION: restorescreen
+     PURPOSE: restore complete 80x25 DOS screen
+ DESCRIPTION: Uses puttext()
+     RETURNS: NULL pointer
+
+
+:edit()
+
+^edit()
+
+    FUNCTION: edit()
+     PURPOSE: Edit data with editstr()
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:void_sprintf()
+
+^void_sprintf()
+
+    FUNCTION: void_sprintf()
+     PURPOSE: My own printf() function, including Boolean type
+ DESCRIPTION: -
+     RETURNS: Pointer to string, in which is printed
+
+
+:void_sscanf()
+
+^void_sscanf()
+
+    FUNCTION: void_sscanf()
+     PURPOSE: Scan data from a string, typecasting the void pointer
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:disp_status()
+
+^disp_status()
+
+    FUNCTION: disp_status()
+     PURPOSE: display a message on line 23
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:show_time()
+
+^show_time()
+
+    FUNCTION: show_time()
+     PURPOSE: Display time in upper right corner of display
+ DESCRIPTION: -
+     RETURNS: nothing
+
+
+:wn_closeall()
+
+^wn_closeall()
+
+    FUNCTION: wn_closeall()
+     PURPOSE: Close all opened windows.
+      SYNTAX: void wn_closeall(void);
+ DESCRIPTION: Goes through the linked window list and closes all windows
+              in this list.
+     RETURNS: Always returns TRUE
+
+
+:wn_update()
+
+^wn_update()
+
+    FUNCTION: wn_update()
+     PURPOSE: window update
+      SYNTAX: int wn_update(void);
+ DESCRIPTION: Update entire screen by redrawing all window's from the window
+              list in the order as they are in this list on a virtual screen,
+              after which this virtual screen will be copied to the physical
+              screen.
+     RETURNS: TRUE if all OK, FALSE if not
+
+
+:wn_dmode()
+
+^wn_dmode()
+
+   FUNCTION: wn_dmode()
+    PURPOSE: Set window display mode (PAINT or FLASH)
+DESCRIPTION: This a dummy for compatibility with WindowBoss
+    RETURNS: nothing
+
+
+:wn_save()
+
+^wn_save()
+
+   FUNCTION: wn_save()
+    PURPOSE: Save a window, including the border (if any)
+     SYNTAX: WINDOW *wn_save(WINDOWPTR w);
+DESCRIPTION: If no space was allocated, this function will allocate
+             memory to save the window. If space was allocated, we
+             assume that the size of the window has not been changed.
+             N.B. window origin is (0,0). Gettext uses (1,1)
+    RETURNS: nothing
+
+
+:wn_hide()
+
+^wn_hide()
+
+   FUNCTION: wn_hide()
+    PURPOSE: Hide a window
+     SYNTAX: int wn_hide(WINDOWPTR w);
+DESCRIPTION: Hide a window by settting the window flag to HIDDEN and
+             update the complete screen. Hidden windows will not be drawn
+    RETURNS: NO_WINDOW if window 'w' not opened.
+
+
+:wn_unhide()
+
+^wn_unhide()
+
+   FUNCTION: wn_unhide()
+    PURPOSE: Unhide a window
+     SYNTAX: int wn_unhide(WINDOWPTR w);
+DESCRIPTION: Unhide a window by resettting the window flag to HIDDEN and
+             update the complete screen. (Hidden windows will not be drawn)
+    RETURNS: NO_WINDOW if window 'w' not opened.
+
+
+:wn_move()
+
+^wn_move()
+
+    FUNCTION: wn_move()
+     PURPOSE: Move a window on the screen
+      SYNTAX: int wn_move(WINDOW *w , int row, int col);
+ DESCRIPTION: Move window 'w' to 'row' and 'col'
+     RETURNS: NO_WINDOW if window 'w' not opened.
+
+
+:wn_restore()
+
+^wn_restore()
+
+   FUNCTION: wn_restore()
+    PURPOSE: Restore window border, contents and cursor on the screen.
+     SYNTAX: void wn_restore(WINDOWPTR w);
+DESCRIPTION: -
+    RETURNS: nothing
+
+
+:wn_clear()
+
+^wn_clear()
+
+   FUNCTION: wn_clear()
+    PURPOSE: Clear contents of a window
+     SYNTAX: int wn_clear(WINDOW *w);
+DESCRIPTION: -
+    RETURNS: NO_WINDOW if no window opened
+
+
+:wn_top()
+
+^wn_top()
+
+   FUNCTION: wn_top()
+    PURPOSE: Make a window the top window
+     SYNTAX: int wn_top(WINDOW *w);
+DESCRIPTION: Make window 'w' the top window by:
+             Transfering it to the end of the list of windows
+             Saving the contents of the current top window
+             Restoring the contents of window 'w'
+    RETURNS: NO_WINDOW: window not opened
+
+
+:wn_scroll
+
+^wn_scroll
+
+    FUNCTION: wn_scroll
+     PURPOSE: Scroll a window up or down
+      SYNTAX: int wn_scroll(WINDOW *w, int i);
+              WINDOW *w : pointer to WCB of window to scroll
+              int i     : number of lines to scroll.
+                          i > 0 --> scroll up i lines
+                          i < 0 --> scroll down i lines
+ DESCRIPTION: Routines taken from C-Chest (CURSES) from Allen Holub, pp 360.
+              The window to scroll will alway become the active window
+     RETURNS: Status of window's scroll-ok flag or:
+
+
+:wn_printf()
+
+^wn_printf()
+
+   FUNCTION: wn_printf()
+    PURPOSE: printf function for windows
+     SYNTAX: int wn_printf(WINDOW *w, char *format, ...);
+DESCRIPTION: -
+    RETURNS: NO_WINDOW: window not opened
+
+
+:wn_title()
+
+^wn_title()
+
+   FUNCTION: wn_title()
+    PURPOSE: Draw title in topline of the window
+     SYNTAX: int wn_title(WINDOW *w, char *format, ...)
+DESCRIPTION: The window has to have a border.
+             The window used will become the active window.
+    RETURNS: TRUE  if all is well,
+
+
+:wn_border()
+
+^wn_border()
+
+   FUNCTION: wn_border()
+    PURPOSE: Draw a border around a window
+     SYNTAX: int wn_border(WINDOW *w, int style);
+DESCRIPTION: WINDOW *w = pointer to a window control block
+             int style = style of border to draw
+             The style does not change the attribute of the border.
+    RETURNS: NO_WINDOW: window not opened
+
+
+:wn_dborder()
+
+^wn_dborder()
+
+   FUNCTION: wn_dborder()
+    PURPOSE: Draw a border around a window
+     SYNTAX: int wn_dborder(WINDOW *w,
+                            int ul, int ur, int tb, int sd, int ll, int lr);
+DESCRIPTION: Sets box characters and calls wn_border
+             ul = upper left
+             ur = upper right
+             tb = top/bottom
+             sd = sides
+             ll = lower left
+             lr = lower right
+    RETURNS: Always TRUE
+
+
+:wn_setbox()
+
+^wn_setbox()
+
+    FUNCTION: wn_setbox()
+     PURPOSE: Set box outline-art to double or single lines
+      SYNTAX: void wn_setbox(int style);
+ DESCRIPTION: The style can be _SINGLE_LINE or _DOUBLE_LINE
+              …ÕÕÕÕÕÕÕÕÕª ⁄ƒƒƒƒƒƒƒƒƒø ÷ƒƒƒƒƒƒƒƒƒ∑  ’ÕÕÕÕÕÕÕÕÕ∏  ’ÕÕÕÕÕÕÕÕ∏
+              ∫ FRAME 0 ∫ ≥ FRAME 1 ≥ ∫ FRAME 2 ∫  ≥ FRAME 3 ≥  ≥ FRAME 4≥
+              »ÕÕÕÕÕÕÕÕÕº ¿ƒƒƒƒƒƒƒƒƒŸ ”ƒƒƒƒƒƒƒƒƒΩ  ‘ÕÕÕÕÕÕÕÕÕæ  ¿ƒƒƒƒƒƒƒƒŸ
+
+                          ‹ ‹ ‹‹‹‹‹‹‹ ‹  ∞∞∞∞∞∞∞∞∞∞∞  ±±±±±±±±±±±  ≤≤≤≤≤≤≤≤≤≤
+
+                FRAME 5   › FRAME 6ﬁ  ∞ FRAME 7 ∞  ±FRAME 8  ±  ≤FRAME 9 ≤
+
+                          ﬂ ﬂ ﬂﬂﬂﬂﬂﬂﬂ ﬂ  ∞∞∞∞∞∞∞∞∞∞∞  ±±±±±±±±±±±  ≤≤≤≤≤≤≤≤≤≤
+
+              €€€€€€€€€€  ********** ‹
+              €FRAME 10€  *FRAME 11*
+              €€€€€€€€€€  **********
+     RETURNS: nothing
+
+
+:wn_dma()
+
+^wn_dma()
+
+   FUNCTION: wn_dma()
+    PURPOSE: Write flag (TRUE or FALSE) to video RAM
+     SYNTAX: void wn_dma(int flag);
+DESCRIPTION: Dummy function to be compatible with WindowBoss
+    RETURNS: nothing
+
+
+:wn_sync()
+
+^wn_sync()
+
+   FUNCTION: wn_sync()
+    PURPOSE: set/clear window's cursor synchronisation flag
+     SYNTAX: wn_sync(WINDOW *w, int flag);
+DESCRIPTION: If flag is TRUE, subsequent text output will be
+             followed by a flashing (normal) cursor. If FALSE
+             the cursor will not be physically advanced
+    RETURNS: A copy of the flag
+
+
+:wn_fixcsr()
+
+^wn_fixcsr()
+
+   FUNCTION: wn_fixcsr()
+    PURPOSE: Update window's cursor position
+     SYNTAX: int wn_fixcsr(WINDOW *w);
+DESCRIPTION: Place the physical cursor at the logical window cursor
+             position. Does not alter the state of window's syncflag.
+             Is mostly used after a wn_sync() to disable the cursor.
+    RETURNS: TRUE, or FALSE if error
+
+
+:wn_setone()
+
+^wn_setone()
+
+    FUNCTION: wn_setone()
+     PURPOSE: Set attribute of 1 character in a window
+      SYNTAX: int wn_setone(WINDOW *w, int row, int col, int attrib);
+              WINDOW *w : pointer to window to perform action on
+              int row   : row (y) of position to set
+              int col   : col (x) of position to set
+              int attrib: attribute to set on (row,col) in window 'w'
+ DESCRIPTION: -
+     RETURNS: 0         if all OK
+
+
+:wn_nattrib()
+
+^wn_nattrib()
+
+   FUNCTION: wn_nattrib()
+    PURPOSE: Set and change window attribute
+     SYNTAX: int wn_nattrib(WINDOW *w, int wattrib);
+DESCRIPTION: The attribute of window 'w'is changed immediately.
+             The border will not be altered.
+    RETURNS: NO_WINDOW if no window opened.
+
+
+:wn_locate()
+
+^wn_locate()
+
+   FUNCTION: wn_locate()
+    PURPOSE: Locate cursor in window
+     SYNTAX: int wn_locate(WINDOW *w, int row, int col);
+DESCRIPTION: Set cursor on position (row,col) relative to window's
+             origin ( (0,0) = upper lefthand corner).
+             N.B. Window w will become the top window.
+    RETURNS: TRUE, or FALSE if error
+
+
+:add_wn_list()
+
+^add_wn_list()
+
+    FUNCTION: add_wn_list()
+     PURPOSE: Add window to double linked list
+      SYNTAX: WINDOw *add_wn_list(WINDOW *w);
+ DESCRIPTION: -
+     RETURNS: pointer to window at start of list
+
+
+:del_wn_list()
+
+^del_wn_list()
+
+    FUNCTION: del_wn_list()
+     PURPOSE: delete window control block from double linked list
+      SYNTAX: WINDOW *del_wn_list(WINDOW *w);
+ DESCRIPTION: -
+     RETURNS: pointer to start of list
+
+
+:wn_open()
+
+^wn_open()
+
+   FUNCTION: wn_open()
+    PURPOSE: open and use a new text window
+     SYNTAX: WINDOW *wn_open(int btype, int row, int col, int width,
+                             int height, int wcolor, int bcolor);
+DESCRIPTION: btype   = border type (_NO_BORDER,_SINGLE_LINE,_DOUBLE_LINE).
+             row     = top left row of window
+             col     = top left column of window
+             width   = width of contents of window (exclusive border)
+             height  = height of contents of window (exclusive border)
+             wcolor  = color of window contents
+             bcolor  = color of border
+    RETURNS: Pointer to the window control block of opened window
+
+
+:wn_close()
+
+^wn_close()
+
+   FUNCTION: wn_close()
+    PURPOSE: close a window
+     SYNTAX: WINDOW *wn_close(WINDOW *w);
+DESCRIPTION: Checks if window defined,
+             Deletes it from the linked window list
+             Free's the memory allocated to it.
+             Makes the last window in the linked list the top window
+             Updates the screen.
+    RETURNS: Alway's returns NULL pointer
+
+
+:wn_init()
+
+^wn_init()
+
+    FUNCTION: wn_init()
+     PURPOSE: initialize window and video enviroment
+      SYNTAX: void wn_init(void);
+ DESCRIPTION: Sets atexit() pointer.
+              Initializes global variables _NormAttr, _TextAttr, _LastMode,
+              _CurCrtSize, _CheckSnow, _DirectVideo, _WindMin and _WindMax.
+              by calling the assembler function crtinit().
+              Sets the variables MINROW, MINCOL, MAXROW, MAXCOL, MAXXSIZE and
+              MAXYSIZE.
+              Sets the segmentaddress 'displayseg' of the physical videoscreen.
+              Gets the current cursor size and position and saves the contents
+              of the current screen and clears it
+     RETURNS: nothing
+
+
+:wn_exit()
+
+^wn_exit()
+
+    FUNCTION: wn_exit()
+     PURPOSE: Exit from window enviroment
+      SYNTAX: void wn_exit(void);
+ DESCRIPTION: Calls several routines to clean up the HvA window enviroment.
+              Closes all open windows.
+              Restores the screen which was there when starting the window
+              enviroment, restores the cursor position and shows it.
+              Close the logfile 'window.log' (if opened).
+     RETURNS: nothing
+
+
+:wn_error()
+
+^wn_error()
+
+    FUNCTION: wn_error()
+     PURPOSE: Display an message in a window with 1 exit button
+      SYNTAX: void wn_error(char *format, ...);
+ DESCRIPTION: uses dialog_menu in the middle of the screen.
+     RETURNS: nothing
+
+
+:wn_yesno()
+
+^wn_yesno()
+
+    FUNCTION: wn_yesno()
+     PURPOSE: Display an message in a window with 2 exit buttons: YES and NO
+      SYNTAX: int wn_yesno(char *format, ...);
+ DESCRIPTION: uses dialog_menu in the middle of the screen.
+     RETURNS: Choise to end this dialog: 'Y', 'N' or ESC.
+
+
+:OS_shell()
+
+^OS_shell()
+
+   FUNCTION: OS_shell()
+    PURPOSE: Call operating system shell.
+     SYNTAX: void OS_shell(void);
+ DESRIPTION: Creates new window for the shell and creates a new
+             shell, which can be left by 'exit'
+    RETURNS: Nothing
+
+
+:wn_shell()
+
+^wn_shell()
+
+   FUNCTION: wn_shell()
+    PURPOSE: Calls operating system shell with a command
+     SYNTAX: wn_shell(int wait, char *command);
+DESCRIPTION: Creates a full-sized window and performs the given command.
+    RETURNS: Nothing
+
+
+:detect_4DOS()
+
+^detect_4DOS()
+
+    FUNCTION: detect_4DOS()
+     PURPOSE: Detect if 4DOS is present
+ DESCRIPTION: Use INT 2Fh call
+     RETURNS: TRUE if 4dos detected, FALSE if not
+
+:window functions
+~dialog_menu()~             ~show_dir()~        ~change_dir()~
+~calc_first_file()~         ~check_filenr()~    ~calc_row_col()~
+~display_dir()~
+~get_files()~
+~get_dir()~
+~main()~
+~editstr()~
+~display_line()~
+~func_index()~
+~init_keylabels()~
+~init_funkey()~
+~do_funkey()~
+~disp_funkeys()~
+~exit_funkey()~
+~main()~
+~main()~
+~display_stack()~
+~push_subject()~
+~pop_subject()~
+~help()~
+~find_topiclink()~
+~show_line()~
+~filbuf()~
+~exit_help()~
+~do_action()~
+~popup()~
+~show_bar()~
+~pulldown()~
+~calc_pulldownbar()~
+~mem_pulldownbar()~
+~pulldown_bar()~
+~exit_pulldown()~
+~setup_menu()~
+~init_menu()~
+~set_display_colors()~
+~get_cursor_shape()~
+~cursoroff()~
+~cursoron()~
+~clrscr()~
+~setcurpos()~
+~set_cursor_shape()~
+~getcurpos()~
+~fillone()~
+~printone()~
+~setone()~
+~printcenter()~
+~printhotcenter()~
+~hotstring()~
+~vb_scroll()~
+~keystatus()~
+~ALT_pressed()~
+~ESC_pressed()~
+~CTRLC_pressed()~
+~savescreen()~
+~edit()~
+~void_sprintf()~
+~void_sscanf()~
+~disp_status()~
+~show_time()~
+~wn_closeall()~
+~wn_update()~
+~wn_log()~
+~wn_dmode()~
+~wn_save()~
+~wn_hide()~
+~wn_show()~
+~wn_restore()~
+~wn_clear()~
+~wn_top()~
+~wn_printf()~
+~wn_title()~
+~wn_border()~
+~wn_dborder()~
+~wn_setbox()~
+~wn_dma()~
+~wn_sync()~
+~wn_fixcsr()~
+~wn_nattrib()~
+~wn_locate()~
+~add_wn_list()~
+~del_wn_list()~
+~wn_open()~
+~wn_close()~
+~wn_init()~
+~wn_exit()~
+~display_error()~
+~wn_yesno()~
+~OS_shell()~
+~wn_shell()~
+~detect_4DOS()~
+:end_of_file

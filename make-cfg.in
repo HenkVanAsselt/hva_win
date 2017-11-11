@@ -1,0 +1,42 @@
+#
+# Makefile.cfg template file for autoconf, for SV2AGW Interface for DJGPP
+#
+
+# What am I?
+DIST_NAME    = SV2AGW TCP Interface 
+DIST_DIRSTEM = sv2btl
+
+# Standard prefixes
+prefix      = @prefix@
+exec_prefix = @exec_prefix@
+bindir      = @bindir@
+datadir     = @datadir@
+infodir     = @infodir@
+includedir  = @includedir@
+libdir      = @libdir@
+
+# Non-standard prefixes, for installing misc docs
+# contribdir  = $(prefix)/contrib/$(DIST_DIRSTEM)
+
+# GNU compiler & tools' flags
+CC              = @CC@
+CFLAGS          = @CFLAGS@ @DEBUGFLAGS@ @FEATUREFLAGS@
+#CXX             = @CXX@
+#CXXFLAGS        = @CXXFLAGS@
+AR              = @AR@
+RANLIB          = @RANLIB@
+STRIP           = strip
+INSTALL         = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_SCRIPT  = @INSTALL_SCRIPT@
+INSTALL_DATA    = @INSTALL_DATA@
+MAKEINFO        = @MAKEINFO@
+INSTALL_INFO    = @INSTALL_INFO@
+INFO            = @INFO@
+		
+# Use DOS's type (if necessary) instead of GNU cat, so that textutils isn't
+# required - see config.in
+CAT = @CAT@
+
+# Strip all symbols by default?
+# LSCK_STRIPALL = @LSCK_STRIPALL@

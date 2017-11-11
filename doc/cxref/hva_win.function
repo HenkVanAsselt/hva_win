@@ -1,0 +1,108 @@
+wn_yesno.c wn_yesno 2 __builtin_next_arg vsprintf wn_dialog
+wn_title.c wn_title 2 __builtin_next_arg free printcenter strdup strlen vsprintf wn_border wn_log wn_top
+wn_shell.c wn_shell 2 printf system v_cursoron wn_clear wn_close wn_open
+wn_shad.c wn_shadow 2 v_setattrib_area
+wn_scrol.c wn_scroll 2 calloc fprintf free v_gettext v_puttext wn_fill wn_log wn_top
+wn_print.c wn_printf 2 __builtin_next_arg strlen v_printc v_setcurpos vsprintf wn_log wn_scroll wn_top
+wn_os.c OS_shell 2 getenv printf system v_cursoron wn_clear wn_close wn_open
+wn_log.c wn_log 2 __builtin_next_arg fclose fopen fprintf fseek getenv vfprintf
+wn_log.c wn_log_indent 2
+wn_loc.c wn_locate 2 v_cursoroff v_cursoron v_setcurpos wn_top
+wn_error.c wn_error 2 __builtin_next_arg vsprintf wn_dialog wn_log wn_log_indent
+wn_desk.c wn_desktop 2 exit fprintf malloc v_gettext v_puttext
+wn_clear.c wn_clear 2 v_fillarea wn_locate wn_log wn_top
+wn_bord.c wn_border 2 v_drawbox wn_log %wn_setbox wn_top
+wn_bord.c wn_setbox 2 v_setboxchars
+window.c add_wn_list 1 wn_log
+window.c del_wn_list 1 %level_wnds wn_log
+window.c level_wnds 1 wn_log
+window.c wn_close 2 %del_wn_list free wn_log %wn_top %wn_update
+window.c wn_closeall 2 %wn_close
+window.c wn_dma 2
+window.c wn_dmode 2
+window.c wn_exit 2 exit_funkey exit_help exit_pulldown v_cursoron v_restorescreen v_setcurpos %wn_closeall wn_log
+window.c wn_fill 2 v_fillarea
+window.c wn_fixcsr 2 v_cursoroff v_cursoron v_setcurpos
+window.c wn_hide 2 wn_log %wn_update
+window.c wn_init 2 atexit clrscr initscr set_display_colors v_cursoroff v_getcurpos v_savescreen wn_log %&wn_exit
+window.c wn_move 2 wn_log wn_log_indent %wn_restore %wn_update
+window.c wn_nattrib 2 v_setattrib_area %wn_top
+window.c wn_open 2 %add_wn_list calloc exit fprintf wn_border wn_clear wn_log %wn_save wn_shadow
+window.c wn_overlap 2
+window.c wn_restore 2 v_puttext %wn_fixcsr wn_log
+window.c wn_save 2 calloc exit fprintf v_getcurpos v_gettext wn_log
+window.c wn_setattrib 2 v_setattrib_area
+window.c wn_setone 2 v_setattrib
+window.c wn_sync 2
+window.c wn_top 2 %add_wn_list %del_wn_list %wn_fixcsr wn_log %wn_restore %wn_save
+window.c wn_unhide 2 wn_log %wn_update
+window.c wn_update 2 clrscr wn_log wn_log_indent %wn_restore %wn_save
+windio.c disp_status 2 __builtin_next_arg strlen v_prints vsprintf
+windio.c edit_data 2 editstr %void_sprintf %void_sscanf
+windio.c hotstring 2 strlen v_prints v_setattrib v_setattrib_area wn_log
+windio.c init_menu 2
+windio.c printcenter 2 strlen v_prints
+windio.c printhotcenter 2 %hotstring strlen
+windio.c set_display_colors 2 strcpy
+windio.c setup_menu 2
+windio.c show_time 2 localtime sprintf time v_prints
+windio.c void_sprintf 2 sprintf strchr strcpy strpbrk
+windio.c void_sscanf 2 atof atoi atol sscanf strchr strcpy strpbrk strtol strtoul
+util.c trimstr 2 strcpy strlen
+pulldown.c calc_pulldownbar 1 strcpy strlen wn_log
+pulldown.c exit_pulldown 2 free wn_log
+pulldown.c mem_pulldownbar 1 exit malloc printf realloc
+pulldown.c pulldown 2 do_funkey help is_fkey popup %pulldown_bar %show_bar strlen v_cursoroff v_setattrib_area waitkey wn_log wn_log_indent
+pulldown.c pulldown_bar 2 %calc_pulldownbar %mem_pulldownbar %show_bar wn_log
+pulldown.c show_bar 1 hotstring strlen wn_log wn_log_indent wn_open wn_restore wn_save
+popup.c do_action 2 editstr help void_sprintf void_sscanf
+popup.c popup 2 %do_action do_funkey help hotstring is_fkey strcat strcpy strlen v_setattrib_area void_sprintf waitkey wn_close wn_log wn_log_indent wn_open
+keys.c is_fkey 2
+keys.c key_pressed 2 bioskey wn_log
+keys.c shift_status 2 bioskey
+keys.c waitkey 2 bioskey %key_pressed wn_log
+help.c check_screen 1
+help.c exit_help 2 free
+help.c filbuf 1 fgets fseek strchr strcmp strcpy strlen
+help.c find_topiclink 1
+help.c first_link_on_screen 2
+help.c help 2 calloc free %pop_subject %show_topic strcmp strcpy trimstr wn_close wn_error wn_log wn_log_indent wn_open
+help.c init_help 2 atexit atol calloc fclose fgets fopen strcat strchr strcpy wn_error %&exit_help
+help.c last_link_on_screen 2
+help.c next_link 2
+help.c pop_subject 1
+help.c prev_link 2
+help.c push_subject 1 strcpy
+help.c redraw_helpscreen 2 %show_line
+help.c show_line 1 %find_topiclink wn_fill wn_locate wn_printf wn_setattrib
+help.c show_topic 1 %check_screen %filbuf %first_link_on_screen %last_link_on_screen %next_link %pop_subject %prev_link %push_subject %redraw_helpscreen %show_line strcpy waitkey wn_clear wn_log wn_scroll
+genindex.c main 2 exit fclose fgets fopen fprintf ftell printf strcat strtok %trimstr
+genindex.c trimstr 2 strcpy strlen
+funkey.c disp_funkeys 2 wn_clear wn_hide wn_locate wn_log wn_open wn_printf wn_setone wn_unhide
+funkey.c do_funkey 2 %func_index is_fkey wn_log
+funkey.c exit_funkey 2 wn_close wn_log
+funkey.c func_index 1
+funkey.c init_funkey 2 %func_index strlen wn_log
+editstr.c display_line 1 memset strcat strncpy v_printc v_prints v_setcurpos
+editstr.c editstr 2 %display_line memset shift_status strcpy strlen v_cursoroff v_printc v_prints waitkey wn_close wn_fixcsr wn_open wn_sync wn_title
+dir.c calc_first_file 1
+dir.c calc_row_col 1
+dir.c change_dir 2 chdir editstr getcwd wn_error
+dir.c check_filenr 1
+dir.c display_dir 1 %calc_first_file %calc_row_col %check_filenr hotstring wn_locate
+dir.c get_dir 2 chdir %display_dir free %get_files getcwd malloc strcat strchr strcpy waitkey wn_close wn_open wn_title
+dir.c get_files 1 _dos_findfirst _dos_findnext getcwd strcpy strlen strlwr strncat
+dir.c show_dir 2 editstr %get_dir strcpy
+dialog.c wn_dialog 2 __builtin_next_arg do_action help hotstring printcenter strlen v_drawbox v_setattrib_area waitkey wn_close wn_hide wn_log wn_log_indent wn_open wn_setbox wn_unhide
+appl.c $ 0 &OS_shell &change_dir %&do_dir %&do_exit %&overlap_demo
+appl.c call_hexconv 2 getch puts sprintf system wn_close wn_open
+appl.c call_terminal 2 sprintf system wn_close wn_open
+appl.c call_zapload 2 getch puts sprintf system wn_close wn_open
+appl.c do_dir 2 editstr get_dir strcpy
+appl.c do_exit 2 exit
+appl.c exit_prog 2 wn_exit
+appl.c initialize 2 atexit init_help wn_init %&exit_prog
+appl.c intro_screen 2 wn_dialog
+appl.c main 2 exit %initialize pulldown
+appl.c overlap_demo 2 getch wn_close wn_open wn_printf
+4dos.c detect_4DOS 2 int86

@@ -1,0 +1,33 @@
+window.h d:/djgpp/include/stdio.h d:/djgpp/include/mem.h stdlib.h
+ufortify.h
+keys.h
+fortify.h d:/djgpp/include/stdlib.h d:/djgpp/include/string.h %ufortify.h
+chksum.h
+wn_yesno.c d:/djgpp/include/stdarg.h %keys.h %window.h
+wn_title.c d:/djgpp/include/stdarg.h d:/djgpp/include/string.h %window.h
+wn_shell.c d:/djgpp/include/stdlib.h %video/v_video.h %window.h
+wn_shad.c %video/v_video.h %window.h
+wn_scrol.c %video/v_video.h %window.h
+wn_print.c d:/djgpp/include/stdarg.h d:/djgpp/include/string.h %video/v_video.h %window.h
+wn_os.c %video/v_video.h %window.h
+wn_log.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/stdarg.h d:/djgpp/include/string.h %window.h
+wn_loc.c %video/v_video.h %window.h
+wn_error.c d:/djgpp/include/stdarg.h %window.h
+wn_desk.c %video/v_video.h %window.h %fortify.h
+wn_clear.c %video/v_video.h %window.h
+wn_bord.c %video/v_video.h %window.h
+window.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/stdarg.h d:/djgpp/include/conio.h d:/djgpp/include/dos.h d:/djgpp/include/ctype.h d:/djgpp/include/string.h %video/v_video.h %window.h d:/djgpp/include/sys/nearptr.h d:/djgpp/include/crt0.h d:/djgpp/include/mem.h
+windio.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/conio.h d:/djgpp/include/ctype.h d:/djgpp/include/bios.h dos.h d:/djgpp/include/string.h d:/djgpp/include/stdarg.h d:/djgpp/include/time.h %video/v_video.h %window.h
+util.c d:/djgpp/include/stdio.h d:/djgpp/include/string.h d:/djgpp/include/ctype.h
+pulldown.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/string.h d:/djgpp/include/ctype.h d:/djgpp/include/conio.h %video/v_video.h %keys.h %window.h %fortify.h
+popup.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/string.h d:/djgpp/include/ctype.h d:/djgpp/include/dos.h %video/v_video.h %keys.h %window.h
+keys.c d:/djgpp/include/bios.h %keys.h
+help.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/math.h d:/djgpp/include/string.h d:/djgpp/include/conio.h %video/v_video.h %keys.h %window.h
+genindex.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/string.h d:/djgpp/include/ctype.h
+funkey.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/conio.h d:/djgpp/include/ctype.h d:/djgpp/include/dos.h d:/djgpp/include/string.h d:/djgpp/include/stdarg.h %keys.h %video/v_video.h %window.h
+fortify.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/string.h d:/djgpp/include/assert.h d:/djgpp/include/math.h d:/djgpp/include/ctype.h d:/djgpp/include/time.h %fortify.h %chksum.h
+editstr.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/conio.h d:/djgpp/include/string.h d:/djgpp/include/ctype.h %video/v_video.h %keys.h %window.h
+dir.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/conio.h d:/djgpp/include/string.h d:/djgpp/include/ctype.h d:/djgpp/include/dos.h d:/djgpp/include/direct.h d:/djgpp/include/unistd.h %keys.h %window.h %fortify.h
+dialog.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/string.h d:/djgpp/include/stdarg.h d:/djgpp/include/ctype.h %keys.h %video/v_video.h %window.h
+appl.c d:/djgpp/include/stdio.h d:/djgpp/include/stdlib.h d:/djgpp/include/conio.h d:/djgpp/include/direct.h d:/djgpp/include/time.h d:/djgpp/include/string.h %keys.h %video/v_video.h %window.h %fortify.h
+4dos.c d:/djgpp/include/bios.h

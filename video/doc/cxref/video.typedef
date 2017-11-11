@@ -1,0 +1,4 @@
+v_video.h bool unsigned char bool
+v_video.h chtype unsigned long chtype
+v_video.h SCREEN struct {...} SCREEN
+v_video.h WINDOW struct _win WINDOW

@@ -1,0 +1,10 @@
+window.h WINDOW struct wcb WINDOW
+window.h WINDOWPTR struct wcb* WINDOWPTR
+window.h MENU struct {...} MENU
+window.h PFI int (*PFI)(void)
+window.h MENU_HEAD struct {...} MENU_HEAD
+fortify.h Fortify_NewHandlerFunc void (*Fortify_NewHandlerFunc)(void)
+fortify.h Fortify_OutputFuncPtr void (*Fortify_OutputFuncPtr)(const char*)
+help.c TOPIC struct {...} TOPIC
+help.c TOPIC_LINK struct {...} TOPIC_LINK
+funkey.c FUNCTION_HANDLER struct {...} FUNCTION_HANDLER

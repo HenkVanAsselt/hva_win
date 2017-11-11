@@ -1,0 +1,23 @@
+v_init.c endwin 2 reset_shell_mode %resize_screen v_cursoron v_get_rows v_gotoxy v_set_font
+v_init.c initscr 2 exit fprintf memset %v_scr_open
+v_init.c resize_screen 2 resize_window touchwin v_get_columns v_get_rows v_scroll v_set_80x25 v_set_font wnoutrefresh
+v_init.c v_scr_open 1 getdosmembyte v_get_columns v_get_cursor_mode v_get_cursor_pos v_get_font v_get_rows v_query_adapter_type
+v_font.c v_get_font 2
+v_font.c v_set_80x25 2 int86
+v_font.c v_set_font 2 int86 v_cursoroff v_cursoron %v_get_font
+v_curs.c PDC_get_columns 2 atoi getenv int86
+v_curs.c v_cursoroff 2 int86 %v_get_cursor_shape
+v_curs.c v_cursoron 2 int86
+v_curs.c v_get_cursor_mode 2 getdosmemword
+v_curs.c v_get_cursor_shape 1 int86
+v_curs.c v_get_rows 2 atoi getdosmembyte getenv
+v_curs.c v_getcurpos 2 int86
+v_curs.c v_gotoxy 2 int86
+v_curs.c v_set_cursor_shape 2 %v_cursoron
+v_curs.c v_setcurpos 2 int86
+v_adapt.c getdosmembyte 2 dosmemget
+v_adapt.c getdosmemword 2 dosmemget
+v_adapt.c setdosmembyte 2 dosmemput
+v_adapt.c setdosmemword 2 dosmemput
+v_adapt.c v_query_adapter_type 2 %getdosmemword int86 int86x %v_sanity_check
+v_adapt.c v_sanity_check 2 v_get_font v_get_rows
